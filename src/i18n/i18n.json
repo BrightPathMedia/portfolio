@@ -1,0 +1,137 @@
+{
+  "en": {
+    "header": {
+      "work":    "Work",
+      "about":   "About",
+      "contact": "Contact",
+
+      "workLinks": {
+        "1": { "name": "Example 1", "url": "/work" },
+        "2": { "name": "Example 2", "url": "/work" },
+        "3": { "name": "Example 3", "url": "/work" },
+        "4": { "name": "Example 4", "url": "/work" }
+      }
+    },
+
+    "index": {
+      "slides": {
+        "1": {
+          "image": "/images/whym_layout_1-0.png",
+          "title": "Slide 1",
+          "sub": "Slide 1 sub",
+          "desc": "Slide 1 description"
+        },
+
+        "2": {
+          "image": "/images/black-friday.png",
+          "title": "BlackFriday.FM",
+          "sub": "Logo Design",
+          "desc": "Retro style brand expression delivering black friday news and RSS feeds"
+        }
+      }
+    },
+
+    "work": {
+      "workItems": {
+        "1": { "name": "Item 1", "url": "#", "image": "/images/culture_sj_poster-0.png" },
+        "2": { "name": "Item 2", "url": "#", "image": "/images/culture_sj_poster-0.png" },
+        "3": { "name": "Item 3", "url": "#", "image": "/images/culture_sj_poster-0.png" },
+        "4": { "name": "Item 4", "url": "#", "image": "/images/culture_sj_poster-0.png" }
+      }
+    },
+
+    "about": {
+      "whoAreWeTitle": "Who R We",
+      "whoAreWeText":  "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+
+      "whatWeDoTitle": "What We Do",
+      "whatWeDoText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. orem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+
+      "contactTitle": "Contact",
+      "contactText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+    },
+
+    "contact": {
+      "pageHeader": "Give us a Holler!",
+      "pageSubHeader": "Feel free to use this form, or contact us directly at:",
+      "email": "service@brightpath.media",
+      "phone": "+81.2092.2039.4029",
+
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Submit"
+      }
+    }
+  },
+
+  "ja": {
+    "header": {
+      "work":    "制作実績",
+      "about":   "会社について",
+      "contact": "お問い合わせ",
+
+      "workLinks": {
+        "1": {"name": "例 1", "url": "/work" },
+        "2": {"name": "例 2", "url": "/work" },
+        "3": {"name": "例 3", "url": "/work" },
+        "4": {"name": "例 4", "url": "/work" }
+      }
+    },
+
+    "index": {
+      "slides" : {
+        "1": {
+          "image": "/images/whym_layout_1-0.png",
+          "title": "スライド 1",
+          "sub": "スライド 1 sub",
+          "desc": "スライド 1 description"
+        },
+
+        "2": {
+          "image": "/images/black-friday.png",
+          "title": "ブラック フライデー",
+          "sub": "Logo Design",
+          "desc": "Retro style brand expression delivering black friday news and RSS feeds"
+        }
+      }
+    },
+
+    "work": {
+      "workItems": {
+        "1": { "name": "アイテム 1", "url": "#", "image": "/images/culture_sj_poster-0.png"  },
+        "2": { "name": "アイテム 2", "url": "#", "image": "/images/culture_sj_poster-0.png"  },
+        "3": { "name": "アイテム 3", "url": "#", "image": "/images/culture_sj_poster-0.png"  },
+        "4": { "name": "アイテム 4", "url": "#", "image": "/images/culture_sj_poster-0.png"  }
+      }
+    },
+
+    "about": {
+      "whoAreWeTitle": "Who R We",
+      "whoAreWeText":  "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+
+      "whatWeDoTitle": "What We Do",
+      "whatWeDoText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. orem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+
+      "contactTitle": "Contact",
+      "contactText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+    },
+
+    "contact": {
+      "pageHeader": "Give us a Holler!",
+      "pageSubHeader": "Feel free to use this form, or contact us directly at:",
+      "email": "service@brightpath.media",
+      "phone": "+81.2092.2039.4029",
+
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Submit"
+      }
+    }
+  }
+}

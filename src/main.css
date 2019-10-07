@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/*
+@font-face {
+  font-family: 'Gen Shin Gothic';
+  src: url('./assets/fonts/GenShinGothic-Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gen Shin Gothic';
+  src: url('./assets/fonts/GenShinGothic-Heavy.ttf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Gen Shin Gothic';
+  src: url('./assets/fonts/GenShinGothic-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Gen Shin Gothic';
+  src: url('./assets/fonts/GenShinGothic-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Gen Shin Gothic';
+  src: url('./assets/fonts/GenShinGothic-ExtraLight.ttf');
+  font-weight: 100;
+}
+
+body {
+  font-family: 'Gen Shin Gothic';
+  font-weight: 300;
+}
+*/
+
+body {
+  font-family: canada-type-gibson, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  perspective: 1000px;
+}
+
+p {
+  font-family: mr-eaves-sans, sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
