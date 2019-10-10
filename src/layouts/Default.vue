@@ -15,7 +15,9 @@
 
           <div class='flex-grow text-right'>
             <button id='btn-i18n'
-                    @click="toggleLocale()">
+                    :class="localeBtnClass"
+                    @click="toggleLocale()"
+                    @mouseover="rotateLocaleBtn()">
               <img svg-inline
                 :alt="English / 日本語"
                 class="h-full w-auto h-max-full inline-block"
@@ -74,6 +76,8 @@ export default {
       containerClass: '',
       mobileLinksShown: false,
       workLinkActive: false,
+      localeBtnBeingAnimated: false,
+      localeBtnClass: ''
     }
   },
 
@@ -81,12 +85,9 @@ export default {
     toggleLocale() {
       document.body.style.overflow = 'hidden';
       document.body.style.background = 'black';
-      this.containerClass = 'rotate-out';
-
-      setTimeout(() => this.containerClass = 'rotate-mid', 300);
+      this.containerClass = 'rotate';
 
       setTimeout(() => {
-        this.containerClass = 'rotate-in'
         this.$i18n.locale = (this.$i18n.locale == 'en' ? 'ja' : 'en');
       }, 350);
 
@@ -95,8 +96,20 @@ export default {
         document.body.style.overflow = '';
         document.body.style.background = 'white';
       }, 650);
+    },
+
+    rotateLocaleBtn() {
+      if (!this.localeBtnBeingAnimated) {
+        this.localeBtnBeingAnimated = true;
+        this.localeBtnClass = 'rotate';
+
+        setTimeout(() => {
+          this.localeBtnBeingAnimated = false;
+          this.localeBtnClass = '';
+        }, 500);
+      }
     }
-  }
+  },
 }
 </script>
 
@@ -104,23 +117,30 @@ export default {
   $header-height: 5.6rem;
 
 
+  @keyframes rotate-screen {
+    0% {
+      transform: rotateY(0);
+    }
+
+    50% {
+      transform: rotateY(90deg);
+    }
+
+    51% {
+      transform: rotateY(270deg);
+    }
+
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
   .container-wrapper {
     transform: rotateY(0);
     background: white;
 
-    &.rotate-out {
-      transform: rotateY(90deg);
-      transition: transform 300ms ease-in;
-    }
-
-    &.rotate-mid {
-      transform: rotateY(270deg);
-      transition: none;
-    }
-
-    &.rotate-in {
-      transform: rotateY(360deg);
-      transition: transform 300ms ease-out;
+    &.rotate {
+      animation: rotate-screen 650ms ease-in-out;
     }
   }
 
@@ -142,6 +162,7 @@ export default {
     border-width: 1.25px;
     transition: opacity 100ms ease-in-out;
     opacity: 1;
+    transform: rotateY(0);
 
     &:active, &:focus {
       @apply outline-none;
@@ -152,8 +173,8 @@ export default {
       outline: none;
     }
 
-    &:hover {
-      opacity: 0.8;
+    &.rotate {
+      animation: rotate-screen 450ms ease-in-out;
     }
   }
 
