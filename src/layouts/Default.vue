@@ -18,8 +18,9 @@
                     @click="toggleLocale()">
               <img svg-inline
                 :alt="English / 日本語"
-                class="h-full w-auto h-max-full"
+                class="h-full w-auto h-max-full inline-block"
                 src="../assets/images/icons-language_24px.svg" />
+              <span class='italic hidden sm:inline-block text-xs pl-2'>{{ $i18n.locale == 'ja' ? 'English' : '日本語' }}</span>
             </button>
           </div>
 
@@ -137,7 +138,10 @@ export default {
   }
 
   #btn-i18n {
-    @apply mr-4 outline-none;
+    @apply mr-4 mb-1 outline-none border border-black rounded px-1 inline-block;
+    border-width: 1.25px;
+    transition: opacity 100ms ease-in-out;
+    opacity: 1;
 
     &:active, &:focus {
       @apply outline-none;
@@ -145,6 +149,11 @@ export default {
 
     svg {
       height: 0.75rem;
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 

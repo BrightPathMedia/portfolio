@@ -68,7 +68,7 @@ export default {
 
       &.img-col {
         img {
-          width: 40%;
+          width: 50%;
           margin: auto;
           height: auto;
         }
