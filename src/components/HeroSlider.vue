@@ -167,14 +167,13 @@ export default {
 
   @media (max-width: 1023px) {
     .slide {
-      flex-direction: column;
-
       .slide-col {
         width: 100%;
-        height: 50%;
+        height: 100%;
       }
 
       .text-col {
+        display: none;
         .desc {
           width: auto;
         }
@@ -187,7 +186,7 @@ export default {
         }
 
         .text-col {
-          width: 100%;
+          width: 0%;
           text-align: center;
         }
       }

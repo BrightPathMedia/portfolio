@@ -17,12 +17,12 @@
             <button id='btn-i18n'
                     :class="localeBtnClass"
                     @click="toggleLocale()"
-                    @mouseover="rotateLocaleBtn()">
+                    @mouseenter="rotateLocaleBtn()">
               <img svg-inline
                 :alt="English / 日本語"
                 class="h-full w-auto h-max-full inline-block"
                 src="../assets/images/icons-language_24px.svg" />
-              <span class='italic hidden sm:inline-block text-xs pl-2'>{{ $i18n.locale == 'ja' ? 'English' : '日本語' }}</span>
+              <span class='italic hidden sm:inline-block text-xs pl-2'>{{ currentLocaleText }}</span>
             </button>
           </div>
 
@@ -106,10 +106,16 @@ export default {
         setTimeout(() => {
           this.localeBtnBeingAnimated = false;
           this.localeBtnClass = '';
-        }, 500);
+        }, 600);
       }
     }
   },
+
+  computed: {
+    currentLocaleText() {
+      return this.$i18n.locale == 'ja' ? 'English' : '日本語'
+    }
+  }
 }
 </script>
 
