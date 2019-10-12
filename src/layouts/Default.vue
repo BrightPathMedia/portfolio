@@ -168,7 +168,7 @@ header {
   }
 
   svg {
-    height: 0.75rem;
+    height: 1rem;
   }
 }
 
