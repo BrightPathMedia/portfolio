@@ -1,7 +1,7 @@
 <template>
   <div class='slide h-full w-full flex flex-col lg:flex-row flex-grow-1 flex-shrink-0' :class="slideAnimClass">
     <div class='slide-col img-col text-center flex justify-center'>
-      <img :src="image" class="h-auto max-h-full max-w-full m-auto" />
+      <img :src="image" />
     </div>
     <div class='slide-col text-col flex flex-col justify-center' :class="textAnimClass">
       <div>
@@ -68,9 +68,7 @@ export default {
 
       &.img-col {
         img {
-          width: 50%;
-          margin: auto;
-          height: auto;
+          @apply w-1/2 h-auto max-h-full max-w-full m-auto;
         }
       }
     }
@@ -188,6 +186,17 @@ export default {
         .text-col {
           width: 0%;
           text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-height: 500px) {
+    .slide {
+      .slide-col.img-col {
+        img {
+          height: 75%;
+          width: auto;
         }
       }
     }

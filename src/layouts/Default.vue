@@ -1,7 +1,9 @@
 <template>
   <div class='container-wrapper'
        :class="containerClass">
-    <div class="container flex flex-col min-h-screen max-h-screen">
+    <div id="container"
+         class="container flex flex-col min-h-screen max-h-screen"
+         :class="$i18n.locale">
       <header class='flex-none lg:px-2'>
         <nav class="flex items-center justify-between flex-wrap py-2">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -30,7 +32,9 @@
             <button class="flex items-center px-3 py-2 text-gray-800 border-none btn-mobile-menu"
                     :class="{'open': mobileLinksShown}"
                     @click="workLinkActive = mobileLinksShown = !mobileLinksShown">
-              <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0"/></svg>
+              <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0"/></svg>
             </button>
           </div>
 
@@ -70,6 +74,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -144,11 +149,30 @@ export default {
   .container-wrapper {
     transform: rotateY(0);
     background: white;
+    opacity: 1;
 
     &.rotate {
       animation: rotate-screen 650ms ease-in-out;
     }
   }
+
+
+  #container.ja {
+    font-family: source-han-sans-japanese, sans-serif;
+  }
+
+  #container.en {
+    font-family: canada-type-gibson, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  #container.en p {
+    font-family: mr-eaves-sans, sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
 
   header {
     max-height: 5.6rem;
