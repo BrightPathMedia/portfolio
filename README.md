@@ -21,4 +21,3 @@ Built with [Gridsome](https://www.gridsome.org). Each layout, page etc. is a Vue
 4. **src/i18n/i18n.json** - EN/JA translation file. Add home page slides, nav links here.
 
 5. **src/assets** - Static assets to be served as is(without any compression/processing etc.)
-
