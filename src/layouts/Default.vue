@@ -48,7 +48,7 @@
                 <g-link class="block lg:inline-block pb-1 lg:w-full lg:text-center lg:font-bold header-link" to="/work"> {{ $t("header.work") }} </g-link>
                 <div class='dropdown-menu'
                     :class="{'shown': workLinkActive}">
-                  <a v-for="(val,key) in $t('header.workLinks')"
+                  <a v-for="(val,key) in $t('work.workItems')"
                     :href="val.url"
                     :key="key"
                     :style="'transition-delay:' + (300 + ((parseInt(key)) * 100)) + 'ms'">
@@ -188,14 +188,21 @@ export default {
   }
 
   #btn-i18n {
-    @apply mr-4 mb-1 outline-none border border-black rounded px-1 inline-block;
+    /*@apply mr-4 mb-1 outline-none border border-black rounded px-1 inline-block;*/
+    margin: 0 1rem 0.25rem 0;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    padding: 0 0.25rem;
+    display: inline-block;
     border-width: 1.25px;
     transition: opacity 100ms ease-in-out;
     opacity: 1;
     transform: rotateY(0);
 
     &:active, &:focus {
-      @apply outline-none;
+      /*@apply outline-none; */
+      outline: none;
     }
 
     svg {
@@ -425,7 +432,7 @@ export default {
 
 <static-query>
 query {
-  metaData {
+  metadata {
     siteName
   }
 }
