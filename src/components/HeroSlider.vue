@@ -68,7 +68,11 @@ export default {
 
       &.img-col {
         img {
-          @apply w-1/2 h-auto max-h-full max-w-full m-auto;
+          width: 50%;
+          height: auto;
+          max-height: 100%;
+          max-width: 100%;
+          margin: auto;
         }
       }
     }
