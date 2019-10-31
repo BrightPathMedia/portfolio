@@ -4,7 +4,7 @@
     :class="slideAnimClass"
   >
     <div class="slide-col img-col text-center flex justify-center">
-      <img :src="image" class="h-auto max-h-full max-w-full m-auto" />
+      <img :src="image" />
     </div>
     <div class="slide-col text-col flex flex-col justify-center" :class="textAnimClass">
       <div>
@@ -71,21 +71,25 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.slide {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 1000ms cubic-bezier(0.77, 0, 0.175, 1);
 
-  .slide-col {
-    width: 50%;
-    margin-left: 0;
-    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+  .slide {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 1000ms cubic-bezier(0.77, 0, 0.175, 1);
 
-    &.img-col {
-      img {
-        width: 40%;
-        margin: auto;
-        height: auto;
+    .slide-col {
+      width: 50%;
+      margin-left: 0;
+      transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+
+      &.img-col {
+        img {
+          width: 50%;
+          height: auto;
+          max-height: 100%;
+          max-width: 100%;
+          margin: auto;
+        }
       }
     }
   }
@@ -205,17 +209,43 @@ export default {
       }
     }
 
-    &.img-only {
-      .img-col {
+  @media (max-width: 1023px) {
+    .slide {
+      .slide-col {
         width: 100%;
-        margin-left: 0;
+        height: 100%;
       }
 
       .text-col {
-        width: 100%;
-        text-align: center;
+        display: none;
+        .desc {
+          width: auto;
+        }
+      }
+
+      &.img-only {
+        .img-col {
+          width: 100%;
+          margin-left: 0;
+        }
+
+        .text-col {
+          width: 0%;
+          text-align: center;
+        }
       }
     }
   }
-}
+
+  @media (max-height: 500px) {
+    .slide {
+      .slide-col.img-col {
+        img {
+          height: 75%;
+          width: auto;
+        }
+      }
+    }
+  }
+
 </style>

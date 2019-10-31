@@ -25,4 +25,30 @@ export default function (Vue, { router, head, isClient, appOptions }) {
     rel: 'stylesheet',
     href: 'https://use.typekit.net/qxv3yvd.css'
   });
+
+  /* Typekit Javascript API for Source Han Sans */
+  if (typeof document !== 'undefined') {
+    var config = {
+      kitId: 'lhe7nha',
+      scriptTimeout: 3000,
+      async: true
+    };
+
+    var d = document;
+    var h = d.documentElement;
+    var tk=d.createElement("script");
+    var f=false
+    var s=d.getElementsByTagName("script")[0]
+    var a;
+    h.className+=" wf-loading"
+    tk.src='https://use.typekit.net/'+config.kitId+'.js';
+    tk.async=true;
+    tk.onload=tk.onreadystatechange=function(){
+      a=this.readyState;
+      if(f||a&&a!="complete"&&a!="loaded")return;
+      f=true;
+      try{Typekit.load(config)}catch(e){}
+    };
+    s.parentNode.insertBefore(tk,s);
+  }
 }

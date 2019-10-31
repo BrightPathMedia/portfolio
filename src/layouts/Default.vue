@@ -1,7 +1,16 @@
 <template>
+<<<<<<< HEAD
   <div class="container-wrapper" :class="containerClass">
     <div class="container flex flex-col min-h-screen max-h-screen">
       <header class="flex-none lg:px-2">
+=======
+  <div class='container-wrapper'
+       :class="containerClass">
+    <div id="container"
+         class="container flex flex-col min-h-screen max-h-screen"
+         :class="$i18n.locale">
+      <header class='flex-none lg:px-2'>
+>>>>>>> master
         <nav class="flex items-center justify-between flex-wrap py-2">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
             <g-link to="/" id="home-link">
@@ -14,6 +23,7 @@
             </g-link>
           </div>
 
+<<<<<<< HEAD
           <div class="flex-grow text-right">
             <button id="btn-i18n" @click="toggleLocale()">
               <img
@@ -22,10 +32,23 @@
                 class="h-full w-auto h-max-full"
                 src="../assets/images/icons-language_24px.svg"
               />
+=======
+          <div class='flex-grow text-right'>
+            <button id='btn-i18n'
+                    :class="localeBtnClass"
+                    @click="toggleLocale()"
+                    @mouseenter="rotateLocaleBtn()">
+              <img svg-inline
+                :alt="English / 日本語"
+                class="h-full w-auto h-max-full inline-block"
+                src="../assets/images/icons-language_24px.svg" />
+              <span class='italic hidden sm:inline-block text-xs pl-2'>{{ currentLocaleText }}</span>
+>>>>>>> master
             </button>
           </div>
 
           <div class="block lg:hidden">
+<<<<<<< HEAD
             <button
               class="flex items-center px-3 py-2 text-gray-800 border-none btn-mobile-menu"
               :class="{'open': mobileLinksShown}"
@@ -39,6 +62,14 @@
                 <title>Menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0" />
               </svg>
+=======
+            <button class="flex items-center px-3 py-2 text-gray-800 border-none btn-mobile-menu"
+                    :class="{'open': mobileLinksShown}"
+                    @click="workLinkActive = mobileLinksShown = !mobileLinksShown">
+              <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0"/></svg>
+>>>>>>> master
             </button>
           </div>
 
@@ -47,6 +78,7 @@
             :class="{'hidden': !mobileLinksShown }"
           >
             <div class="text-sm text-right lg:flex-grow">
+<<<<<<< HEAD
               <span
                 class="dropdown-link inline-block"
                 @mouseover="workLinkActive = true"
@@ -59,6 +91,15 @@
                 <div class="dropdown-menu" :class="{'shown': workLinkActive}">
                   <a
                     v-for="(val,key) in $t('header.workLinks')"
+=======
+              <span class='dropdown-link inline-block'
+                    @mouseover="workLinkActive = true"
+                    @mouseleave="workLinkActive = false">
+                <g-link class="block lg:inline-block pb-1 lg:w-full lg:text-center lg:font-bold header-link" to="/work"> {{ $t("header.work") }} </g-link>
+                <div class='dropdown-menu'
+                    :class="{'shown': workLinkActive}">
+                  <a v-for="(val,key) in $t('work.workItems')"
+>>>>>>> master
                     :href="val.url"
                     :key="key"
                     :style="'transition-delay:' + (300 + ((parseInt(key)) * 100)) + 'ms'"
@@ -90,17 +131,26 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       containerClass: "",
       mobileLinksShown: false,
+<<<<<<< HEAD
       workLinkActive: false
     };
+=======
+      workLinkActive: false,
+      localeBtnBeingAnimated: false,
+      localeBtnClass: ''
+    }
+>>>>>>> master
   },
 
   methods: {
     toggleLocale() {
+<<<<<<< HEAD
       document.body.style.overflow = "hidden";
       document.body.style.background = "black";
       this.containerClass = "rotate-out";
@@ -110,6 +160,14 @@ export default {
       setTimeout(() => {
         this.containerClass = "rotate-in";
         this.$i18n.locale = this.$i18n.locale == "en" ? "ja" : "en";
+=======
+      document.body.style.overflow = 'hidden';
+      document.body.style.background = 'black';
+      this.containerClass = 'rotate';
+
+      setTimeout(() => {
+        this.$i18n.locale = (this.$i18n.locale == 'en' ? 'ja' : 'en');
+>>>>>>> master
       }, 350);
 
       setTimeout(() => {
@@ -117,6 +175,24 @@ export default {
         document.body.style.overflow = "";
         document.body.style.background = "white";
       }, 650);
+    },
+
+    rotateLocaleBtn() {
+      if (!this.localeBtnBeingAnimated) {
+        this.localeBtnBeingAnimated = true;
+        this.localeBtnClass = 'rotate';
+
+        setTimeout(() => {
+          this.localeBtnBeingAnimated = false;
+          this.localeBtnClass = '';
+        }, 600);
+      }
+    }
+  },
+
+  computed: {
+    currentLocaleText() {
+      return this.$i18n.locale == 'ja' ? 'English' : '日本語'
     }
   }
 };
@@ -129,6 +205,7 @@ $header-height: 5.6rem;
   transform: rotateY(0);
   background: white;
 
+<<<<<<< HEAD
   &.rotate-out {
     transform: rotateY(90deg);
     transition: transform 300ms ease-in;
@@ -169,6 +246,57 @@ header {
 
   svg {
     height: 1rem;
+=======
+  @keyframes rotate-screen {
+    0% {
+      transform: rotateY(0);
+    }
+
+    50% {
+      transform: rotateY(90deg);
+    }
+
+    51% {
+      transform: rotateY(270deg);
+    }
+
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .container-wrapper {
+    transform: rotateY(0);
+    background: white;
+    opacity: 1;
+
+    &.rotate {
+      animation: rotate-screen 650ms ease-in-out;
+    }
+  }
+
+
+  #container.ja {
+    font-family: source-han-sans-japanese, sans-serif;
+  }
+
+  #container.en {
+    font-family: canada-type-gibson, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  #container.en p {
+    font-family: mr-eaves-sans, sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+
+  header {
+    max-height: 5.6rem;
+    z-index: 10;
+>>>>>>> master
   }
 }
 
@@ -215,6 +343,7 @@ header {
   }
 }
 
+<<<<<<< HEAD
 .dropdown-link {
   position: relative;
   z-index: 10;
@@ -227,6 +356,33 @@ header {
 
     &::after {
       height: 0.5rem;
+=======
+  #btn-i18n {
+    /*@apply mr-4 mb-1 outline-none border border-black rounded px-1 inline-block;*/
+    margin: 0 1rem 0.25rem 0;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    padding: 0 0.25rem;
+    display: inline-block;
+    border-width: 1.25px;
+    transition: opacity 100ms ease-in-out;
+    opacity: 1;
+    transform: rotateY(0);
+
+    &:active, &:focus {
+      /*@apply outline-none; */
+      outline: none;
+    }
+
+    svg {
+      height: 0.75rem;
+      outline: none;
+    }
+
+    &.rotate {
+      animation: rotate-screen 450ms ease-in-out;
+>>>>>>> master
     }
   }
 
@@ -388,7 +544,7 @@ header {
 
 <static-query>
 query {
-  metaData {
+  metadata {
     siteName
   }
 }
