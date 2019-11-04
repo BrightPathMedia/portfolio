@@ -31,18 +31,28 @@ export default {
   },
 
   async mounted() {
-    const { id } = this.$route.params
-    for(var key in this.$t('work.workItems')) {
-      var w = this.$t('work.workItems')[key]
-      if (w.url.replace('/work/','').toLowerCase() == id.toLowerCase()) {
-        this.currentItemIndex = key
-      }
-    }
+    this.setItem()
+  },
+
+  watch: {
+    $route: 'setItem'
   },
 
   computed: {
     currentItem() {
       return this.$t('work.workItems')[this.currentItemIndex]
+    }
+  },
+
+  methods: {
+    setItem() {
+      const { url } = this.$context
+      for(var key in this.$t('work.workItems')) {
+        var w = this.$t('work.workItems')[key]
+        if (w.url == url) {
+          this.currentItemIndex = key
+        }
+      }
     }
   }
 

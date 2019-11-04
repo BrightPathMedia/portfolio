@@ -5,12 +5,20 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const i18nConfig = require('./src/i18n/i18n.json')
+
 module.exports = function (api) {
   api.loadSource(({ addContentType }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   })
 
   api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api
+    Object.values(i18nConfig.en.work.workItems).forEach( item => {
+      createPage({
+        path: item.url,
+        component: './src/templates/WorkItem.vue',
+        context: item
+      })
+    })
   })
 }
