@@ -12,11 +12,15 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   })
 
-  api.createPages(({ createPage }) => {
+  api.createManagedPages(async ({ createRoute }) => {
+    const workItemRoute = createRoute({
+      path: `/work/:slug`,
+      component: './src/templates/WorkItem.vue'
+    })
+
     Object.values(i18nConfig.en.work.workItems).forEach( item => {
-      createPage({
+      workItemRoute.addPage({
         path: item.url,
-        component: './src/templates/WorkItem.vue',
         context: item
       })
     })
