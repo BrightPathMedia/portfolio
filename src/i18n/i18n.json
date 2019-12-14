@@ -20,6 +20,13 @@
           "title": "BlackFriday.FM",
           "sub": "Logo Design",
           "desc": "Retro style brand expression delivering black friday news and RSS feeds"
+        },
+
+        "3": {
+          "image": "/images/portfolio/lately/lately-curly.jpg",
+          "title": "Test Test Test",
+          "sub": "stuff'n'things",
+          "desc": "RAoruagsojfeaw;ofjaw;oefijaw;eofijaweaw;ofjaw;oefijaw;oeifjaa;woeifjday news and RSS feeds"
         }
       }
     },
@@ -94,9 +101,9 @@
       "slides": {
         "1": {
           "image": "/images/whym_layout_1-0.png",
-          "title": "スライド 1",
-          "sub": "スライド 1 sub",
-          "desc": "スライド 1 description"
+          "title": "Whym",
+          "sub": "アプリのUIデザイン",
+          "desc": "Whym（ウィーム）はかっこいい案内景観を紹介して楽しめ"
         },
 
         "2": {
@@ -104,6 +111,13 @@
           "title": "ブラック フライデー",
           "sub": "Logo Design",
           "desc": "Retro style brand expression delivering black friday news and RSS feeds"
+        },
+
+        "3": {
+          "image": "/images/portfolio/lately/lately-curly.jpg",
+          "title": "Test Test Test",
+          "sub": "stuff'n'things",
+          "desc": "RAoruagsojfeaw;ofjaw;oefijaw;eofijaweaw;ofjaw;oefijaw;oeifjaa;woeifjday news and RSS feeds"
         }
       }
     },
