@@ -1,8 +1,8 @@
 {
   "en": {
     "header": {
-      "work":    "Work",
-      "about":   "About",
+      "work": "Work",
+      "about": "About",
       "contact": "Contact"
     },
 
@@ -27,8 +27,8 @@
     "work": {
       "workItems": {
         "1": {
-          "name": "Item 1",
-          "url": "/work/item-1",
+          "name": "Whym",
+          "url": "/work/whym",
           "image": "/images/culture_sj_poster-0.png",
           "desc": "Lorem ipsum dolor sit amet"
         },
@@ -58,7 +58,7 @@
 
     "about": {
       "whoAreWeTitle": "Who R We",
-      "whoAreWeText":  "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+      "whoAreWeText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
 
       "whatWeDoTitle": "What We Do",
       "whatWeDoText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. orem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
@@ -85,13 +85,13 @@
 
   "ja": {
     "header": {
-      "work":    "制作実績",
-      "about":   "会社について",
+      "work": "制作実績",
+      "about": "会社について",
       "contact": "お問い合わせ"
     },
 
     "index": {
-      "slides" : {
+      "slides": {
         "1": {
           "image": "/images/whym_layout_1-0.png",
           "title": "スライド 1",
@@ -111,8 +111,8 @@
     "work": {
       "workItems": {
         "1": {
-          "name": "アイテム 1",
-          "url": "/work/item-1",
+          "name": "Whym",
+          "url": "/work/whym",
           "image": "/images/culture_sj_poster-0.png",
           "desc": "Lorem ipsum dolor sit amet"
         },
@@ -140,7 +140,7 @@
 
     "about": {
       "whoAreWeTitle": "Who R We",
-      "whoAreWeText":  "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+      "whoAreWeText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
 
       "whatWeDoTitle": "What We Do",
       "whatWeDoText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. orem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
