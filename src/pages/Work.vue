@@ -14,7 +14,7 @@
       </a>
     </div>
 
-    </div>
+    </div> 
   </Layout>
 </template>
 

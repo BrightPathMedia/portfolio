@@ -42,7 +42,7 @@
 
         "2": {
           "name": "Item 2",
-          "url": "/work/item-2",
+          "url": "/work/item-g",
           "image": "/images/culture_sj_poster-0.png",
           "desc": "Lorem ipsum dolor sit amet"
         },
@@ -133,7 +133,7 @@
 
         "2": {
           "name": "アイテム 2",
-          "url": "/work/item-2",
+          "url": "/work/item-g",
           "image": "/images/culture_sj_poster-0.png",
           "desc": "Lorem ipsum dolor sit amet"
         },
