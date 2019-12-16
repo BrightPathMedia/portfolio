@@ -1,19 +1,12 @@
-<template>
-  <Layout>
+<template lang=pug>
+  Layout
 
-    <div class='flex flex-col lg:flex-row my-4 w-full'>
-      <div class='w-full lg:w-1/2 p-4 lg:p-0 lg:mr-8'>
-      </div>
+    div(class='lg:flex-row').flex.flex-col.my-4.w-full 
+      div(class='lg:w-1/2 lg:p-0 lg:mr-8').w-full.p-4
+      div(class='lg:w-1/2 lg:m-0 lg:ml-8 lg:order-none').w-auto.ml-4.border-t.pt-2.border-black.order-first 
+        h1.h1.text-2xl.font-bold.mb-4 {{ test }}
+        p.desc
 
-      <div class='w-auto lg:w-1/2 ml-4 lg:m-0 lg:ml-8 border-t pt-2 border-black order-first lg:order-none'>
-        <h1 class='h1 text-2xl font-bold mb-4'>{{ test }}</h1>
-        <p class='desc'>
-        </p>
-      </div>
-    </div>
-
-    </div>
-  </Layout>
 </template>
 
 <script>

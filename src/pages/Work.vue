@@ -1,28 +1,23 @@
-<template>
-  <Layout>
-
-    <div class='flex flex-col lg:flex-row my-4 w-full'>
-      <a class='work-item w-full lg:w-1/4 p-2'
-         :href="w.url"
-         v-for="w in $t('work.workItems')">
-        <div class=''>
-          <div class='title pb-2'>{{ w.name }}</div>
-          <div class='image'>
-            <img :src="w.image" class="h-auto w-auto" />
-          </div>
-        </div>
-      </a>
-    </div>
-
-    </div> 
-  </Layout>
+<template lang=pug>
+  Layout
+    div(class="lg:flex-row").flex.flex-col.my-4.w-full
+      a(class="lg:w-1/4.p-2" :href="w.url" v-for="w in $t('work.workItems')").work-item.w-full
+        div
+          .title.pb-2 {{ w.name }}
+          div
+          .image
+            img(:src="w.image").h-auto.w-auto
 </template>
 
 <script>
-export default {
-  metaInfo: {
+import Vue from 'vue';
+import Component from 'vue-class-component';
+
+@Component
+export default class Work extends Vue {
+  metaInfo = {
     title: 'Work'
-  },
+  }
 
 }
 </script>
