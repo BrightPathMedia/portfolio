@@ -1,64 +1,53 @@
-<template>
-  <Layout>
+<template lang=pug>
+  Layout
+    div(class='lg:flex-row').flex.flex-col.my-4.w-full
+      div(class='lg:w-1/2 p-4 lg:p-0 lg:mr-8').w-full
+        img(:src="currentItem.image").h-auto.w-auto
 
-    <div class='flex flex-col lg:flex-row my-4 w-full'>
-      <div class='w-full lg:w-1/2 p-4 lg:p-0 lg:mr-8'>
-        <img :src="currentItem.image" class="h-auto w-auto" />
-      </div>
-
-      <div class='w-auto lg:w-1/2 ml-4 lg:m-0 lg:ml-8 border-t pt-2 border-black order-first lg:order-none'>
-        <h1 class='h1 text-2xl font-bold mb-4'>{{ currentItem.name }}</h1>
-        <p class='desc'>
-          {{ currentItem.desc }}
-        </p>
-      </div>
-    </div>
-
-    </div>
-  </Layout>
+      div(class='lg:w-1/2 lg:m-0 lg:ml-8 lg:order-none').border-t.pt-2.border-black.order-first.w-auto.ml-4 
+        h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
+        p.desc {{ currentItem.desc }}
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Work'
+    title: "Work"
   },
 
   data() {
     return {
       currentItemIndex: 1
-    }
+    };
   },
 
   async mounted() {
-    this.setItem()
+    this.setItem();
   },
 
   watch: {
-    $route: 'setItem'
+    $route: "setItem"
   },
 
   computed: {
     currentItem() {
-      return this.$t('work.workItems')[this.currentItemIndex]
+      return this.$t("work.workItems")[this.currentItemIndex];
     }
   },
 
   methods: {
     setItem() {
-      const { url } = this.$context
-      for(var key in this.$t('work.workItems')) {
-        var w = this.$t('work.workItems')[key]
+      const { url } = this.$context;
+      for (var key in this.$t("work.workItems")) {
+        var w = this.$t("work.workItems")[key];
         if (w.url == url) {
-          this.currentItemIndex = key
+          this.currentItemIndex = key;
         }
       }
     }
   }
-
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

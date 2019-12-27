@@ -7,6 +7,7 @@
           div
           .image
             img(:src="w.image").h-auto.w-auto
+
 </template>
 
 <script>

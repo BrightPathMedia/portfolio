@@ -37,7 +37,10 @@
           "name": "Whym",
           "url": "/work/whym",
           "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "desc": "Lorem ipsum dolor sit amet",
+          "bio": {
+            "1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non massa efficitur lacus sodales rhoncus non nec erat. Proin facilisis maximus nisi, id scelerisque velit rutrum id. Nullam ultrices aliquet dui, non sodales erat lacinia at. Nulla tristique nibh sed mi luctus eleifend. Pellentesque lobortis posuere porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rhoncus viverra leo, et pretium erat auctor eu."
+          }
         },
 
         "2": {
@@ -60,6 +63,12 @@
           "image": "/images/culture_sj_poster-0.png",
           "desc": "Lorem ipsum dolor sit amet"
         }
+      }
+    },
+
+    "entries": {
+      "whym": {
+        "block-1": ""
       }
     },
 
@@ -128,7 +137,10 @@
           "name": "Whym",
           "url": "/work/whym",
           "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "desc": "Lorem ipsum dolor sit amet",
+          "bio": {
+            "1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non massa efficitur lacus sodales rhoncus non nec erat. Proin facilisis maximus nisi, id scelerisque velit rutrum id. Nullam ultrices aliquet dui, non sodales erat lacinia at. Nulla tristique nibh sed mi luctus eleifend. Pellentesque lobortis posuere porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rhoncus viverra leo, et pretium erat auctor eu."
+          }
         },
 
         "2": {
