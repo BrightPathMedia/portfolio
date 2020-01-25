@@ -1,13 +1,12 @@
 <template lang=pug>
   Layout
     div(class="lg:flex-row").flex.flex-col.my-4.w-full
-      a(class="lg:w-1/4.p-2" :href="w.url" v-for="w in $t('work.workItems')").work-item.w-full
+      a(class="lg:w-1/4" :href="w.url" v-for="w in $t('work.workItems')").work-item.w-full.p-2
         div
           .title.pb-2 {{ w.name }}
           div
           .image
             img(:src="w.image").h-auto.w-auto
-
 </template>
 
 <script>
