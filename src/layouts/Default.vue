@@ -90,7 +90,7 @@
         </nav>
       </header>
 
-      <div class="content flex flex-grow">
+      <div class="content flex-grow">
         <slot />
       </div>
 
