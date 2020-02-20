@@ -136,30 +136,12 @@
         "1": {
           "name": "Whym",
           "url": "/work/whym",
-          "image": "/images/culture_sj_poster-0.png",
+          "image": "/portfolio-covers/whym.jpg",
           "desc": "Lorem ipsum dolor sit amet",
           "bio": {
-            "1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non massa efficitur lacus sodales rhoncus non nec erat. Proin facilisis maximus nisi, id scelerisque velit rutrum id. Nullam ultrices aliquet dui, non sodales erat lacinia at. Nulla tristique nibh sed mi luctus eleifend. Pellentesque lobortis posuere porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rhoncus viverra leo, et pretium erat auctor eu."
+            "1": "Hi! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non massa efficitur lacus sodales rhoncus non nec erat. Proin facilisis maximus nisi, id scelerisque velit rutrum id. Nullam ultrices aliquet dui, non sodales erat lacinia at. Nulla tristique nibh sed mi luctus eleifend. Pellentesque lobortis posuere porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rhoncus viverra leo, et pretium erat auctor eu.",
+            "2": "This is a test paragraphia. Notpalada des rostari chlemú charga, Klass, erta: ghordathumi. Ets, etan."
           }
-        },
-
-        "2": {
-          "name": "アイテム 2",
-          "url": "/work/item-g",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
-        },
-        "3": {
-          "name": "アイテム 3",
-          "url": "/work/item-3",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
-        },
-        "4": {
-          "name": "アイテム 4",
-          "url": "/work/item-4",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
         }
       }
     },
