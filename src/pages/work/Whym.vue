@@ -1,14 +1,16 @@
 <template lang=pug>
   Layout
-    .block
-      .flex-row-reverse.flex.my-4.w-full
 
-        div(class='lg:w-1/2 lg:m-0 lg:ml-8 lg:order-none').block.border-t.pt-2.border-black.order-first.w-auto.ml-4 
-          h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
-          p.desc {{ currentItem.bio[1] }}
-    .block
-      .flex.my-4.w-full
-        img(:src='currentItem.bio["image-1"]')
+    .portfolirow.flex-row-reverse
+
+      div(class='lg:w-1/2 lg:m-0 lg:ml-8 lg:order-none').border-t.pt-2.border-black.order-first.w-auto.ml-4 
+        h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
+        p.desc {{ currentItem.bio[1] }}
+    .portfolirow.w-full
+      img(:src='currentItem.bio["image-1"]')
+    .portfolirow
+
+
 </template>
 
 <script>
@@ -36,5 +38,14 @@ export default class Whym extends Vue {
 
 .flex-row-reverse {
   flex-flow: row-reverse;
+}
+
+.portfolirow {
+  margin-bottom: 6rem;
+  display: flex;
+}
+
+.desc {
+  padding-right: 4rem;
 }
 </style>

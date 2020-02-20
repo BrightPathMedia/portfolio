@@ -90,7 +90,7 @@
         </nav>
       </header>
 
-      <div class="content flex-grow">
+      <div class="content flex-grow pt-20">
         <slot />
       </div>
 
@@ -241,7 +241,7 @@ header {
 .header-link {
   position: relative;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 400;
 
   &::before {
     content: "";
