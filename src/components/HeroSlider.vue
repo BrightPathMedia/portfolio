@@ -75,7 +75,7 @@ export default {
   transform: translateY(0);
   opacity: 1;
   transition: all 1000ms cubic-bezier(0.77, 0, 0.175, 1);
-  min-height: 500px;
+  // min-height: 700px;
 
   .slide-col {
     width: 50%;

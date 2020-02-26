@@ -19,12 +19,13 @@
           </div>
 
           <div class="flex-grow text-right">
-            <button
+            <!-- <button
               id="btn-i18n"
               :class="localeBtnClass"
               @click="toggleLocale()"
               @mouseenter="rotateLocaleBtn()"
-            >
+            >-->
+            <button id="btn-i18n" :class="localeBtnClass" @click="toggleLocale()">
               <img
                 svg-inline
                 :alt="English / 日本語"

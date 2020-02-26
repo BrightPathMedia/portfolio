@@ -37,9 +37,13 @@
           "name": "Whym",
           "url": "/work/whym",
           "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet",
+          "desc": "Whym was an app built for the non-planners. The professional crastinators, the improvisers, and those who fly by the seat of their pants. Tour companies often end up with a seat or two they can’t fill, so they can list their unsold tickets on the Whym platform, and even enjoy getting some exposure by being on the app.",
           "bio": {
-            "1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non massa efficitur lacus sodales rhoncus non nec erat. Proin facilisis maximus nisi, id scelerisque velit rutrum id. Nullam ultrices aliquet dui, non sodales erat lacinia at. Nulla tristique nibh sed mi luctus eleifend. Pellentesque lobortis posuere porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec rhoncus viverra leo, et pretium erat auctor eu."
+            "1-title": "Purchase Flow-cused",
+            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
+            "2-title": "Additional Work",
+            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
+            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
           }
         },
 
@@ -140,8 +144,11 @@
           "image": "/portfolio-covers/whym.jpg",
           "desc": "それは前近頃こういう反抗学においてののうちがいうなう。もし事実より評論もおもにこの教育だなかもがするからかかるないをはまごまご思っないですて、実際には聴いたんんう。",
           "bio": {
+            "1-title": "あら嫌だ",
             "1": "それは前近頃こういう反抗学においてののうちがいうなう。もし事実より評論もおもにこの教育だなかもがするからかかるないをはまごまご思っないですて、実際には聴いたんんう。",
-            "2": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。"
+            "2-title": "帰りなさい",
+            "2": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。",
+            "3": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。"
           }
         }
       }
