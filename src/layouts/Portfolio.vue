@@ -501,12 +501,35 @@ header {
 }
 
 @media (max-width: 1279px) {
+  .portfoligroup {
+    margin: 0 !important;
+  }
+  .portfolirow .desc {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .portfolitext {
+    padding: unset !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 60%;
+    min-width: 375px;
+  }
+
+  .portfolirow.just-right {
+    justify-content: center !important;
+  }
   .portfolirow {
     flex-wrap: wrap;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   .portfolitem {
-    padding-left: 0;
-    padding-right: 0;
+    margin-top: 2rem !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding: 2rem !important;
   }
 }
 
