@@ -2,14 +2,14 @@
   Portfolio
     .portfolirow.flex-row-reverse.just-right
       .border-t.pt-2.border-black.order-first.w-auto.ml-4.w-half
-        h1.text-2xl.font-semibold.mb-4 {{ currentItem.name }}
+        h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
         p.desc {{ currentItem.desc }}
     .portfolirow
       img(src='/images/portfolio/whym/whym-03.png').portfolitem
     .portfolirow.flex-row-reverse.just-right
       .portfolitext.w-half.portfolitem
         h1.portfolisubhead {{ currentItem.bio["1-title"] }}
-        p {{ currentItem.bio[1] }}
+        p.portfolitext {{ currentItem.bio[1] }}
     .portfolirow
       img(src='/images/portfolio/whym/whym-04.png').portfolitem
     .portfoligroup
@@ -31,7 +31,7 @@
 
 <script>
 import Vue from "vue";
-import Portfolio from "../../layouts/Portfolio.vue"
+import Portfolio from "../../layouts/Portfolio.vue";
 import Component from "vue-class-component";
 
 @Component({
@@ -52,92 +52,5 @@ export default class Whym extends Vue {
 <style lang="scss" scoped>
 
 
-.work-item {
-  .title {
-    font-weight: 600;
-    font-size: 1rem;
-  }
-}
 
-.desc {
-  line-height: 1.7rem;
-}
-
-.flex-row-reverse {
-  flex-flow: row-reverse;
-}
-
-.portfolirow {
-  display: flex;
-  justify-content: space-around;
-}
-
-.portfolitem {
-  margin: 0 1rem;
-  align-self: center;
-
-  &:last-child{
-    margin-right: 0;
-  }
-
-  &:first-child{
-    margin-left: 0;
-  }
-}
-
-.portfolitext {
-  display: inline-block;
-  font-size: 1rem;
-  padding-right: 3rem;
-  line-height: 1.7rem;
-  font-weight: 100;
-}
-
-.portfolisubhead {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-
-
-@media (max-width: 1279px) {
-  .portfolirow {
-    flex-wrap: wrap;
-  }
-  .portfolitem {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.portfoligroup, .portfolirow {
-  margin-bottom: 4rem;
-  .portfolirow {
-    margin-bottom: 2rem;
-  }
-}
-
-.fg-1 {
-  flex-grow: 1;
-}
-
-@media (min-width: 1279px) {
-  .w-half {
-    width: calc(50% - 1rem);
-  }
-}
-
-.desc {
-  padding-right: 4rem;
-  font-weight: 100;
-}
-
-.just-right{
-  justify-content: right;
-}
-
-.font-semibold {
-  font-weight: 400;
-}
 </style>

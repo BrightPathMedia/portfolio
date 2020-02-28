@@ -187,14 +187,10 @@ $header-height: 5.6rem;
 
 #container.en {
   font-family: canada-type-gibson, sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
 }
 
 #container.en p {
   font-family: mr-eaves-sans, sans-serif;
-  font-weight: 400;
-  font-size: 1.2rem;
 }
 
 header {
@@ -450,6 +446,107 @@ header {
       }
     }
   }
+}
+
+.desc {
+  line-height: 1.7rem;
+}
+
+.flex-row-reverse {
+  flex-flow: row-reverse;
+}
+
+.portfolirow {
+  display: flex;
+  justify-content: space-around;
+}
+
+.portfolitem {
+  margin: 0 1rem;
+  align-self: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.en .portfolitext {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-right: 3rem;
+  line-height: 1.7rem;
+  font-weight: 400 !important;
+}
+
+.ja .portfolitext {
+  display: inline-block;
+  font-size: 1rem;
+  padding-right: 3rem;
+  line-height: 1.7rem;
+  font-weight: 400 !important;
+}
+
+.portfolitext {
+  font-weight: 400;
+}
+
+.portfolisubhead {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 1279px) {
+  .portfolirow {
+    flex-wrap: wrap;
+  }
+  .portfolitem {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.portfoligroup,
+.portfolirow {
+  margin-bottom: 4rem;
+  .portfolirow {
+    margin-bottom: 2rem;
+  }
+}
+
+.fg-1 {
+  flex-grow: 1;
+}
+
+@media (min-width: 1279px) {
+  .w-half {
+    width: calc(50% - 1rem);
+  }
+}
+
+.desc {
+  padding-right: 4rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.ja .desc {
+  padding-right: 4rem;
+  font-weight: 400;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.just-right {
+  justify-content: right;
+}
+
+.font-semibold {
+  font-weight: 400;
 }
 </style>
 
