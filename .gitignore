@@ -6,3 +6,5 @@ node_modules
 dist
 .env
 .env.*
+static/images/bpm-portfolio-whym-shotmaker.ai
+static/portfolio-covers/bpm-portfolio-grid-panel.psd
