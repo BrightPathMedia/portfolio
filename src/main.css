@@ -16,3 +16,10 @@ html {
 body {
   perspective: 1000px;
 }
+
+.work-item {
+  .title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}

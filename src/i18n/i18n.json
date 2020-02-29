@@ -36,30 +36,74 @@
         "1": {
           "name": "Whym",
           "url": "/work/whym",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "images": {
+            "cover": "/images/culture_sj_poster-0.png",
+            "main": ""
+          },
+          "desc": "Whym was an app built for the non-planners. The professional crastinators, the improvisers, and those who fly by the seat of their pants. Tour companies often end up with a seat or two they can’t fill, so they can list their unsold tickets on the Whym platform, and even enjoy getting some exposure by being on the app.",
+          "bio": {
+            "1-title": "Purchase Flow-cused",
+            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
+            "2-title": "Additional Work",
+            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
+            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+          }
         },
 
         "2": {
-          "name": "Item 2",
-          "url": "/work/item-g",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "name": "Culture SJ",
+          "url": "/work/culture-sj",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg",
+            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
+            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+          },
+          "desc": "Culture San José was an initiative to bring the citizens of the multicultural city together and share great food, music, and more. Though this project never came to realization, we’d love to share with you the whimsical and exciting vibes that these prints radiate."
         },
 
         "3": {
-          "name": "Item 3",
-          "url": "/work/item-3",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "name": "Dishcrawl",
+          "url": "/work/dishcrawl",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg"
+          },
+          "desc": "Lorem ipsum dolor sit amet",
+          "bio": {
+            "1-title": "Purchase Flow-cused",
+            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
+            "2-title": "Additional Work",
+            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
+            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+          }
         },
 
         "4": {
           "name": "Item 4",
           "url": "/work/item-4",
-          "image": "/images/culture_sj_poster-0.png",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg",
+            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
+            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+          },
+          "desc": "Lorem ipsum dolor sit amet"
+        },
+
+        "5": {
+          "name": "Item 4",
+          "url": "/work/item-4",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg",
+            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
+            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+          },
           "desc": "Lorem ipsum dolor sit amet"
         }
+      }
+    },
+
+    "entries": {
+      "whym": {
+        "block-1": ""
       }
     },
 
@@ -126,28 +170,47 @@
       "workItems": {
         "1": {
           "name": "Whym",
+          "furigana": "ウィム",
           "url": "/work/whym",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "images": {
+            "cover": "/portfolio-covers/whym.jpg"
+          },
+          "desc": "それは前近頃こういう反抗学においてののうちがいうなう。もし事実より評論もおもにこの教育だなかもがするからかかるないをはまごまご思っないですて、実際には聴いたんんう。",
+          "bio": {
+            "1-title": "あら嫌だ",
+            "1": "それは前近頃こういう反抗学においてののうちがいうなう。もし事実より評論もおもにこの教育だなかもがするからかかるないをはまごまご思っないですて、実際には聴いたんんう。",
+            "2-title": "帰りなさい",
+            "2": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。",
+            "3": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。"
+          }
         },
 
         "2": {
-          "name": "アイテム 2",
-          "url": "/work/item-g",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "name": "Culture SJ",
+          "furigana": "カルチャー・SJ",
+          "url": "/work/culture-sj",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg",
+            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
+            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+          },
+          "desc": "「カルチャー・サンホセ」は、多文化都市の市民を結び付け、素晴らしい食べ物、音楽などを共有するための概念でした。 このプロジェクトは実現しませんでしたが、これらのプリントが放つ気まぐれで刺激的な雰囲気を皆さんと共有したいと思いますね。"
         },
+
         "3": {
-          "name": "アイテム 3",
-          "url": "/work/item-3",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
-        },
-        "4": {
-          "name": "アイテム 4",
-          "url": "/work/item-4",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "name": "Dishcrawl",
+          "url": "/work/dishcrawl",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg"
+          },
+          "desc": "1. Many people who live in big cities can’t explore the entirety of the food selection available. Whether you’re new or you have just relocated, you may need a hand finding great spots to eat. Dishcrawl curated eating experiences that allowed a small group of people to try foods from as many as 4 restaurants in a night.",
+          "bio": {
+            "1-title": "Purchase Flow-cused",
+            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
+            "2-title": "Additional Work",
+            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
+            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+          }
         }
       }
     },

@@ -38,9 +38,9 @@ import Component from "vue-class-component";
     Portfolio
   }
 })
-export default class Whym extends Vue {
+export default class Dishcrawl extends Vue {
   test = 20;
-  currentItemIndex = 1;
+  currentItemIndex = 3;
 
   get currentItem() {
     return this.$t("work.workItems")[this.currentItemIndex];
@@ -49,7 +49,4 @@ export default class Whym extends Vue {
 </script>
 
 <style lang="scss" scoped>
-
-
-
 </style>
