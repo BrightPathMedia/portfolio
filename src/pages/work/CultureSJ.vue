@@ -1,7 +1,7 @@
 <template lang=pug>
   Portfolio
     .portfolirow.flex-row-reverse.just-right
-      .border-t.pt-2.border-black.order-first.w-auto.ml-4.w-half
+      div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-half.portfolitem.portfolitext
         h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
         p.desc {{ currentItem.desc }}
     .portfoligroup

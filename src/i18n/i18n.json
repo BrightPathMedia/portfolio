@@ -62,16 +62,40 @@
         },
 
         "3": {
-          "name": "Item 3",
-          "url": "/work/item-3",
-          "image": "/images/culture_sj_poster-0.png",
-          "desc": "Lorem ipsum dolor sit amet"
+          "name": "Dishcrawl",
+          "url": "/work/dishcrawl",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg"
+          },
+          "desc": "Lorem ipsum dolor sit amet",
+          "bio": {
+            "1-title": "Purchase Flow-cused",
+            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
+            "2-title": "Additional Work",
+            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
+            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+          }
         },
 
         "4": {
           "name": "Item 4",
           "url": "/work/item-4",
-          "image": "/images/culture_sj_poster-0.png",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg",
+            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
+            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+          },
+          "desc": "Lorem ipsum dolor sit amet"
+        },
+
+        "5": {
+          "name": "Item 4",
+          "url": "/work/item-4",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg",
+            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
+            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+          },
           "desc": "Lorem ipsum dolor sit amet"
         }
       }
@@ -160,6 +184,7 @@
             "3": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。"
           }
         },
+
         "2": {
           "name": "Culture SJ",
           "furigana": "カルチャー・SJ",
@@ -170,6 +195,22 @@
             "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
           },
           "desc": "「カルチャー・サンホセ」は、多文化都市の市民を結び付け、素晴らしい食べ物、音楽などを共有するための概念でした。 このプロジェクトは実現しませんでしたが、これらのプリントが放つ気まぐれで刺激的な雰囲気を皆さんと共有したいと思いますね。"
+        },
+
+        "3": {
+          "name": "Dishcrawl",
+          "url": "/work/dishcrawl",
+          "images": {
+            "cover": "/portfolio-covers/culture-sj.jpg"
+          },
+          "desc": "1. Many people who live in big cities can’t explore the entirety of the food selection available. Whether you’re new or you have just relocated, you may need a hand finding great spots to eat. Dishcrawl curated eating experiences that allowed a small group of people to try foods from as many as 4 restaurants in a night.",
+          "bio": {
+            "1-title": "Purchase Flow-cused",
+            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
+            "2-title": "Additional Work",
+            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
+            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+          }
         }
       }
     },
