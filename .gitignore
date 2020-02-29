@@ -6,14 +6,9 @@ node_modules
 dist
 .env
 .env.*
-<<<<<<< HEAD
-static/images/bpm-portfolio-whym-shotmaker.ai
-static/portfolio-covers/bpm-portfolio-grid-panel.psd
-=======
 static/portfolio-covers/bpm-portfolio-grid-panel.psd
 static/images/bpm-portfolio-shotmaker.ai
 static/images/bpm-portfolio-whym-shotmaker.ai
 *.ai
 *.psd
 
->>>>>>> add-whym
