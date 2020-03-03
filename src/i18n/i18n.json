@@ -201,15 +201,24 @@
           "name": "Dishcrawl",
           "url": "/work/dishcrawl",
           "images": {
-            "cover": "/portfolio-covers/culture-sj.jpg"
+            "cover": "/portfolio-covers/dishcrawl.jpg",
+            "battledish-locations": "/images/portfolio/dishcrawl/battledish-locations",
+            "battledish-flyer": "/images/portfolio/dishcrawl/battledish-flyer",
+            "tastemaker-card": "/images/portfolio/dishcrawl/tastemaker-card",
+            "tastemaker-logo": "/images/portfolio/dishcrawl/tastemaker-logo",
+            "tastemaker-suits": "/images/portfolio/dishcrawl/tastemaker-suits",
+            "web-blog": "/images/portfolio/dishcrawl/web-blog",
+            "web-dropdown": "/images/portfolio/dishcrawl/web-dropdown",
+            "web-modal": "/images/portfolio/dishcrawl/web-modal"
           },
-          "desc": "1. Many people who live in big cities can’t explore the entirety of the food selection available. Whether you’re new or you have just relocated, you may need a hand finding great spots to eat. Dishcrawl curated eating experiences that allowed a small group of people to try foods from as many as 4 restaurants in a night.",
+          "desc": "Many people who live in big cities can’t explore the entirety of the food selection available. Dishcrawl curated eating experiences that allowed a small group of people to try foods from as many as 4 restaurants in a night.",
           "bio": {
-            "1-title": "Purchase Flow-cused",
-            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
-            "2-title": "Additional Work",
-            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
-            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+            "1-title": "The Way We See It",
+            "1": "These are proposals for a total overhaul of the UX of the web platform. We brought vibrance and a smooth, capable experience to the brand, focusing on presenting an intuitive and functional interface.",
+            "battledish-title": "Battledish",
+            "battledish-body": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
+            "tastemakers-title": "Tastemakers",
+            "tastemakers-body": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
           }
         }
       }

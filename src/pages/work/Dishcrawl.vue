@@ -5,27 +5,27 @@
         h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
         p.desc {{ currentItem.desc }}
     .portfolirow
-      img(src='/images/portfolio/whym/whym-03.png').portfolitem
+      img(:src='currentItem.images.cover').portfolitem
     .portfolirow.flex-row-reverse.just-right
       .portfolitext.w-half.portfolitem
         h1.portfolisubhead {{ currentItem.bio["1-title"] }}
         p {{ currentItem.bio[1] }}
     .portfolirow
-      img(src='/images/portfolio/whym/whym-04.png').portfolitem
+      img(:src='currentItem.images.cover').portfolitem
     .portfoligroup
       .portfolirow.flex-row-reverse
-        img( src='/images/portfolio/whym/whym-01.png').portfolitem.w-half
+        img( :src='currentItem.images.cover').portfolitem.w-half
         .w-half.portfolitext.portfolitem.order-first
           h1.portfolisubhead {{ currentItem.bio["2-title"] }}
           p {{ currentItem.bio[2] }}
       .portfolirow
-        img( src='/images/portfolio/whym/whym-06.png').portfolitem.w-half
-        img( src='/images/portfolio/whym/whym-05.png').portfolitem.w-half
+        img( :src='currentItem.images.cover').portfolitem.w-half
+        img( :src='currentItem.images.cover').portfolitem.w-half
     .portfoligroup
       .portfolirow
-        img( src='/images/portfolio/whym/whym-02.png').w-full.portfolitem
+        img( :src='currentItem.images.cover').w-full.portfolitem
     .portfolirow
-      img(src='/images/portfolio/whym/whym-07.png').portfolitem
+      img(:src='currentItem.images.cover').portfolitem
 </template>
 
 <script>

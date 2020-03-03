@@ -18,8 +18,19 @@ body {
 }
 
 .work-item {
-  .title {
-    font-weight: 600;
-    font-size: 1rem;
+}
+
+.work-item .title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.smooth-transition {
+  transition: all 200ms ease-in-out;
+}
+
+.angel-hover-glow {
+  &:hover {
+    opacity: 0.8 !important;
   }
 }

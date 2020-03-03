@@ -152,7 +152,6 @@ export default {
 
 <style lang='scss' scoped>
 $header-height: 5.6rem;
-
 @keyframes rotate-screen {
   0% {
     transform: rotateY(0);

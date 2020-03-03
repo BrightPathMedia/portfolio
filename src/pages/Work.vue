@@ -6,29 +6,30 @@
           .title.pb-2 {{ w.name }}
           div
           .image
-            img(:src="w.image").h-auto.w-auto
+            img(:src="w.images.cover").h-auto.w-auto
 </template>
 
 <script>
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import Vue from "vue";
+import Component from "vue-class-component";
 
 @Component
 export default class Work extends Vue {
   metaInfo = {
-    title: 'Work'
-  }
-
+    title: "Work"
+  };
 }
 </script>
 
 <style lang="scss" scoped>
-
-  .work-item {
-    .title {
-      font-weight: 600;
-      font-size: 1rem;
-    }
+@import "../main.css";
+.work-item {
+  & img {
+    @apply angel-hover-glow smooth-transition;
   }
-
+  .title {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
 </style>
