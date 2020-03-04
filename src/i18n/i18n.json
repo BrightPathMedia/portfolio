@@ -37,7 +37,7 @@
           "name": "Whym",
           "url": "/work/whym",
           "images": {
-            "cover": "/images/culture_sj_poster-0.png",
+            "cover": "/portfolio-covers/whym.jpg",
             "main": ""
           },
           "desc": "Whym was an app built for the non-planners. The professional crastinators, the improvisers, and those who fly by the seat of their pants. Tour companies often end up with a seat or two they can’t fill, so they can list their unsold tickets on the Whym platform, and even enjoy getting some exposure by being on the app.",
@@ -65,38 +65,33 @@
           "name": "Dishcrawl",
           "url": "/work/dishcrawl",
           "images": {
-            "cover": "/portfolio-covers/culture-sj.jpg"
+            "cover": "/portfolio-covers/dishcrawl.jpg",
+            "homepage1": "/images/portfolio/dishcrawl/homepage1.png",
+            "homepage2": "/images/portfolio/dishcrawl/homepage2.png",
+            "battledish": "/images/portfolio/dishcrawl/battledish.png",
+            "tastemakersCombo": "/images/portfolio/dishcrawl/tastemaker-combo.png",
+            "tastemakersLogo": "/images/portfolio/dishcrawl/tastemaker-logo.png"
           },
-          "desc": "Lorem ipsum dolor sit amet",
+          "desc": "Many people who live in big cities can’t explore the entirety of the food selection available. Dishcrawl curated eating experiences that allowed a small group of people to try foods from as many as 4 restaurants in a night.",
           "bio": {
-            "1-title": "Purchase Flow-cused",
-            "1": "When designing the app, the main focus was finding a simple and elegant way to streamline the ticket purchasing process, as each company has very specific needs and requires different information from their customers to properly reserve a spot. This also proved to be the greatest challenge, but we think we nailed it.",
-            "2-title": "Additional Work",
-            "2": "We also did some collateral like advertisements and homepage design. The advertisements were used as marketing on Facebook.",
-            "3": "Whym’s UI was mentioned on the Today Show in 2017 in their “Top Apps of 2017” segment. Randi Zuckerberg (yes… Mark’s sister) showed off our product and called it a 'must have.'"
+            "1-title": "The Way We See It",
+            "1": "These are proposals for a total overhaul of the UX of the web platform. We brought vibrance and a smooth, capable experience to the brand, focusing on presenting an intuitive and functional interface.",
+            "battledishTitle": "Battledish",
+            "battledishBody": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
+            "tastemakersTitle": "Tastemakers",
+            "tastemakersBody": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
           }
         },
 
         "4": {
-          "name": "Item 4",
-          "url": "/work/item-4",
+          "name": "Lately",
+          "url": "/work/lately",
           "images": {
-            "cover": "/portfolio-covers/culture-sj.jpg",
-            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
-            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
+            "cover": "/portfolio-covers/lately.jpg",
+            "curly": "/images/portfolio/lately/lately-curly.jpg",
+            "straight": "/images/portfolio/lately/lately-straight.jpg"
           },
-          "desc": "Lorem ipsum dolor sit amet"
-        },
-
-        "5": {
-          "name": "Item 4",
-          "url": "/work/item-4",
-          "images": {
-            "cover": "/portfolio-covers/culture-sj.jpg",
-            "firePan": "/images/portfolio/culture-sj/fire-pan.jpg",
-            "drinkNotes": "/images/portfolio/culture-sj/drink-notes.jpg"
-          },
-          "desc": "Lorem ipsum dolor sit amet"
+          "desc": "A logo for a fashion-based lifestyle app aimed at staying with the current trend. Two offered concepts."
         }
       }
     },
@@ -170,18 +165,19 @@
       "workItems": {
         "1": {
           "name": "Whym",
-          "furigana": "ウィム",
           "url": "/work/whym",
           "images": {
-            "cover": "/portfolio-covers/whym.jpg"
+            "cover": "/portfolio-covers/whym.jpg",
+            "main": ""
           },
-          "desc": "それは前近頃こういう反抗学においてののうちがいうなう。もし事実より評論もおもにこの教育だなかもがするからかかるないをはまごまご思っないですて、実際には聴いたんんう。",
+          "desc": "Whym（ウィム）は、非プランナー向けに構築されたアプリでした。 プロのクラスティネーター、即興演奏者、ズボンの座席で飛行する人々。 ツアー会社はしばしば席を埋めることができないので、Whymプラットフォームで売れ残りチケットをリストアップしたり、アプリに参加して露出を楽しんだりすることもできます。",
           "bio": {
-            "1-title": "あら嫌だ",
-            "1": "それは前近頃こういう反抗学においてののうちがいうなう。もし事実より評論もおもにこの教育だなかもがするからかかるないをはまごまご思っないですて、実際には聴いたんんう。",
-            "2-title": "帰りなさい",
-            "2": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。 ただの魂が世界をきっかけに漂流しました。",
-            "3": "何が間違っていたのか、私の正気に属するものが混ざっていたのです。 私は憎しみや信心の支持者ではありません。"
+            "1-title": "購入流れ焦点",
+            "1": "アプリを設計する際の主な焦点は、チケット購入プロセスを合理化するためのシンプルでエレガントな方法を見つけることでした。各会社には非常に具体的なニーズがあり、適切にスポットを予約するには顧客からの異なる情報が必要です。 これも最大の課題であることが判明しましたが、我々はそれを打ち出したと思います。",
+            "2-title": "追加作成",
+            "2": "また、広告やホームページのデザインなどの担保も行いました。 広告はFacebookのマーケティングとして使用されました。",
+            "3-title": "テレビ上の認知",
+            "3": "WhymのUIは、2017年のToday Showの「2017年のトップアプリ」セグメントで取り上げられました。 Randi Zuckerberg（はい...マークの妹）は私たちの製品を披露し、「必須」と呼びました。"
           }
         },
 
@@ -202,24 +198,31 @@
           "url": "/work/dishcrawl",
           "images": {
             "cover": "/portfolio-covers/dishcrawl.jpg",
-            "battledish-locations": "/images/portfolio/dishcrawl/battledish-locations",
-            "battledish-flyer": "/images/portfolio/dishcrawl/battledish-flyer",
-            "tastemaker-card": "/images/portfolio/dishcrawl/tastemaker-card",
-            "tastemaker-logo": "/images/portfolio/dishcrawl/tastemaker-logo",
-            "tastemaker-suits": "/images/portfolio/dishcrawl/tastemaker-suits",
-            "web-blog": "/images/portfolio/dishcrawl/web-blog",
-            "web-dropdown": "/images/portfolio/dishcrawl/web-dropdown",
-            "web-modal": "/images/portfolio/dishcrawl/web-modal"
+            "homepage1": "/images/portfolio/dishcrawl/homepage1.png",
+            "homepage2": "/images/portfolio/dishcrawl/homepage2.png",
+            "battledish": "/images/portfolio/dishcrawl/battledish.png",
+            "tastemakersCombo": "/images/portfolio/dishcrawl/tastemaker-combo.png",
+            "tastemakersLogo": "/images/portfolio/dishcrawl/tastemaker-logo.png"
           },
-          "desc": "Many people who live in big cities can’t explore the entirety of the food selection available. Dishcrawl curated eating experiences that allowed a small group of people to try foods from as many as 4 restaurants in a night.",
+          "desc": "大都市に住んでいる多くの人々は、ある食品の選択のすべてを探求することはできません。 ディッシュクロールは、小さなグループが一晩で最大4軒のレストランの料理を試すことができる食事体験をキュレーションしました。",
           "bio": {
-            "1-title": "The Way We See It",
-            "1": "These are proposals for a total overhaul of the UX of the web platform. We brought vibrance and a smooth, capable experience to the brand, focusing on presenting an intuitive and functional interface.",
-            "battledish-title": "Battledish",
-            "battledish-body": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
-            "tastemakers-title": "Tastemakers",
-            "tastemakers-body": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
+            "1-title": "うちの観点",
+            "1": "これらは、WebプラットフォームのUXの全面的なオーバーホールの提案です。 直感的で機能的なインターフェースの提示に焦点を当て、活気とスムーズで有能な体験をブランドにもたらしました。",
+            "battledishTitle": "Battledish（バトルディッシュ）",
+            "battledishBody": "ディッシュクロールは、カテゴリー別にシェフとシェフを競うコンテストを開催しました。勝者は自慢できる権利をゲットし、コミュニティ内外で認知される機会を得ます。",
+            "tastemakersTitle": "Tastemaker（テーストメーカー）",
+            "tastemakersBody": "テイストメーカーの計画は、忠実なディッシュクローラーを、その地域のレストランで割引を享受する排他的なグループに参加させ、メンバーとして高く評価されることを目指したアイデアでした。"
           }
+        },
+        "4": {
+          "name": "Lately",
+          "url": "/work/lately",
+          "images": {
+            "cover": "/portfolio-covers/lately.jpg",
+            "curly": "/images/portfolio/lately/lately-curly.jpg",
+            "straight": "/images/portfolio/lately/lately-straight.jpg"
+          },
+          "desc": "現在のトレンドにとどまることを目的としたファッションベースのライフスタイルアプリのロゴ。 2つのコンセプトが提供されました。"
         }
       }
     },
