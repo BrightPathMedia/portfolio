@@ -37,9 +37,9 @@ import Component from "vue-class-component";
     Portfolio
   }
 })
-export default class Dishcrawl extends Vue {
+export default class RareCandy extends Vue {
   test = 20;
-  currentItemIndex = 3;
+  currentItemIndex = 5;
 
   get currentItem() {
     return this.$t("work.workItems")[this.currentItemIndex];
