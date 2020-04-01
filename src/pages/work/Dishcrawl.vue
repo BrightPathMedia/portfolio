@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Entry from "./Entry.vue";
 import Portfolio from "../../layouts/Portfolio.vue";
 import Component from "vue-class-component";
 
@@ -37,7 +37,7 @@ import Component from "vue-class-component";
     Portfolio
   }
 })
-export default class Dishcrawl extends Vue {
+export default class Dishcrawl extends Entry {
   test = 20;
   currentItemIndex = 3;
 

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Entry from "./Entry.vue";
 import Portfolio from "../../layouts/Portfolio.vue";
 import Component from "vue-class-component";
 
@@ -37,13 +37,8 @@ import Component from "vue-class-component";
     Portfolio
   }
 })
-export default class RareCandy extends Vue {
-  test = 20;
+export default class RareCandy extends Entry {
   currentItemIndex = 5;
-
-  get currentItem() {
-    return this.$t("work.workItems")[this.currentItemIndex];
-  }
 }
 </script>
 

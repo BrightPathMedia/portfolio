@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Entry from "./Entry.vue";
 import Component from "vue-class-component";
 import Portfolio from "../../layouts/Portfolio.vue";
 
@@ -22,13 +22,8 @@ import Portfolio from "../../layouts/Portfolio.vue";
     Portfolio
   }
 })
-export default class CultureSJ extends Vue {
-  test = 20;
+export default class CultureSJ extends Entry {
   currentItemIndex = 2;
-
-  get currentItem() {
-    return this.$t("work.workItems")[this.currentItemIndex];
-  }
 }
 </script>
 

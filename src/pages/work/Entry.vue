@@ -3,9 +3,7 @@ import Vue from "vue";
 
 export default class Entry extends Vue {
   get currentItem() {
-    return this.$t("work.workItems.rows")["r" + this.currentRow][
-      this.currentItemIndex
-    ];
+    return this.$t("work.workItems")[this.currentItemIndex];
   }
 }
 </script>
