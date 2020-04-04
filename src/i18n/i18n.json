@@ -10,9 +10,9 @@
       "slides": {
         "1": {
           "image": "/images/whym_layout_1-0.png",
-          "title": "Slide 1",
-          "sub": "Slide 1 sub",
-          "desc": "Slide 1 description"
+          "title": "Whym",
+          "sub": "Experience and Interface",
+          "desc": "An app for the procrastinators. We show you an overview of the look and feel of the iPhone app."
         },
 
         "2": {
@@ -24,9 +24,23 @@
 
         "3": {
           "image": "/images/portfolio/lately/lately-curly.jpg",
-          "title": "Test Test Test",
-          "sub": "stuff'n'things",
-          "desc": "RAoruagsojfeaw;ofjaw;oefijaw;eofijaweaw;ofjaw;oefijaw;oeifjaa;woeifjday news and RSS feeds"
+          "title": "Lately",
+          "sub": "Logotype Design",
+          "desc": "The stem of a brand aimed at frugal fashionistas."
+        },
+
+        "4": {
+          "image": "/images/portfolio/culture-sj/fire-pan.jpg",
+          "title": "Culture SJ",
+          "sub": "Poster Design",
+          "desc": "Designing a poster for a plan to bring a community together with food, music, and fashion."
+        },
+
+        "5": {
+          "image": "/images/portfolio/dishcrawl/homepage1.png",
+          "title": "Dishcrawl",
+          "sub": "Rebrand, Experience, Branding",
+          "desc": "A new take on a fun way to get around town to see your local restaurants."
         }
       }
     },
@@ -94,9 +108,29 @@
           "desc": "A logo for a fashion-based lifestyle app aimed at staying with the current trend. Two offered concepts."
         }
       },
+
       "5": {
         "name": "Rare Candy",
         "url": "/work/rare-candy",
+        "images": {
+          "cover": "/portfolio-covers/lately.jpg",
+          "curly": "/images/portfolio/lately/lately-curly.jpg",
+          "straight": "/images/portfolio/lately/lately-straight.jpg"
+        },
+        "desc": "Pokémon was a large part of Peter Le's and Amy Kim's lives as kids, as well as that of their friends. They decided to host an art gallery featuring the original 151 pokémon they had grown up with. They acquired the help of their frinds in the Animation/Illustration program at San José State University to hold it for a good cause.",
+        "bio": {
+          "1-title": "The Way We See It",
+          "1": "These are proposals for a total overhaul of the UX of the web platform. We brought vibrance and a smooth, capable experience to the brand, focusing on presenting an intuitive and functional interface.",
+          "battledishTitle": "Battledish",
+          "battledishBody": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
+          "tastemakersTitle": "Tastemakers",
+          "tastemakersBody": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
+        }
+      },
+
+      "6": {
+        "name": "Japan Wifi Buddy",
+        "url": "/work/jwb",
         "images": {
           "cover": "/portfolio-covers/lately.jpg",
           "curly": "/images/portfolio/lately/lately-curly.jpg",
@@ -158,23 +192,37 @@
       "slides": {
         "1": {
           "image": "/images/whym_layout_1-0.png",
-          "title": "Whym",
-          "sub": "アプリのUIデザイン",
+          "title": "ウィーム",
+          "sub": "アプリデザイン",
           "desc": "Whym（ウィーム）はかっこいい案内景観を紹介して楽しめ"
         },
 
         "2": {
           "image": "/images/black-friday.png",
-          "title": "ブラック フライデー",
-          "sub": "Logo Design",
-          "desc": "Retro style brand expression delivering black friday news and RSS feeds"
+          "title": "ブラックフライデー",
+          "sub": "ローゴー",
+          "desc": "ブラックフライデーのニュースとRSSフィードを配信するレトロなスタイルのブランド表現"
         },
 
         "3": {
           "image": "/images/portfolio/lately/lately-curly.jpg",
-          "title": "Test Test Test",
-          "sub": "stuff'n'things",
-          "desc": "RAoruagsojfeaw;ofjaw;oefijaw;eofijaweaw;ofjaw;oefijaw;oeifjaa;woeifjday news and RSS feeds"
+          "title": "レイトリー",
+          "sub": "ローゴー",
+          "desc": "質素なファッショニスタを目指したブランドの原点。"
+        },
+
+        "4": {
+          "image": "/images/portfolio/culture-sj/fire-pan.jpg",
+          "title": "カルチャーSJ",
+          "sub": "ポスターデザイン",
+          "desc": "フード、音楽、ファッションとコミュニティを結びつける計画のポスターをデザインする。"
+        },
+
+        "5": {
+          "image": "/images/portfolio/dishcrawl/homepage1.png",
+          "title": "ディシュクロール",
+          "sub": "イメージ変え, UXデザイン, ブランド",
+          "desc": "A new take on a fun way to get around town to see your local restaurants."
         }
       }
     },
@@ -263,8 +311,8 @@
       },
 
       "6": {
-        "name": "Rare Candy",
-        "url": "/work/rare-candy",
+        "name": "Japan Wifi Buddy",
+        "url": "/work/jwb",
         "images": {
           "cover": "/portfolio-covers/lately.jpg",
           "curly": "/images/portfolio/lately/lately-curly.jpg",
@@ -276,7 +324,7 @@
           "1": "These are proposals for a total overhaul of the UX of the web platform. We brought vibrance and a smooth, capable experience to the brand, focusing on presenting an intuitive and functional interface.",
           "battledishTitle": "Battledish",
           "battledishBody": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
-          "tastemakersTitle": "Tastemaker",
+          "tastemakersTitle": "Tastemakers",
           "tastemakersBody": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
         }
       }
