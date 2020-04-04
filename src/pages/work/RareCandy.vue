@@ -38,7 +38,7 @@ import Component from "vue-class-component";
   }
 })
 export default class RareCandy extends Entry {
-  currentItemIndex = 5;
+  currentItemIndex = 7;
 }
 </script>
 

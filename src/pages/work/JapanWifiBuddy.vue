@@ -1,6 +1,7 @@
 <template lang=pug>
   Portfolio
     .portfolirow.flex-row-reverse.just-right
+      p hey!
       div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-half.portfolitem.portfolitext
         h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
         p.desc {{ currentItem.desc }}
@@ -38,7 +39,7 @@ import Component from "vue-class-component";
   }
 })
 export default class JapanWifiBuddy extends Entry {
-  currentItemIndex = 6;
+  currentItemIndex = 5;
 }
 </script>
 
