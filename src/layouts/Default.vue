@@ -202,7 +202,7 @@ header {
 }
 
 .content {
-  height: calc(100vh - 5.6rem);
+  /*height: calc(100vh - 5.6rem); */
 }
 
 #home-link svg {
