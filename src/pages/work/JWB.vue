@@ -1,7 +1,7 @@
 <template lang=pug>
   Portfolio
       #portfolio-view.w-auto.border-t.pt-2.border-black.order-first(
-        v-if="portfolioTextShown"
+        v-show="portfolioTextShown"
         class="lg:w-1/2 ml-4 lg:m-0 lg:ml-8 lg:order-none"
         :style="{top: '-'+portfolioTextTop+'px'}"
         ref="portfolioText"

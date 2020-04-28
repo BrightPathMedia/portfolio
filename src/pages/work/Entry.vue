@@ -14,21 +14,23 @@ export default class Entry extends Vue {
 
   @Watch("currentItem")
   portfolioTopTimeout() {
-    setTimeout(() => {
-      this.setPortfolioTextTop();
-    }, 1000);
+    this.setPortfolioTextTop();
+    // setTimeout(() => {
+    //   this.setPortfolioTextTop();
+    // }, 1000);
   }
 
   get currentItem() {
     return this.$t("work.workItems")[this.currentItemIndex];
   }
 
-  get togglePortfolioText() {
+  togglePortfolioText() {
     this.portfolioTextShown = !this.portfolioTextShown;
     console.log(this.$refs.portfolioText.clientHeight);
   }
 
-  get setPortfolioTextTop() {
+  setPortfolioTextTop() {
+    console.log(this.$refs);
     console.log(this.$refs.portfolioText.clientHeight);
     this.portfolioTextTop =
       this.$refs.portfolioText.clientHeight - window.innerHeight + 50;
@@ -44,17 +46,18 @@ export default class Entry extends Vue {
     }
   }
 
-  async created() {
+  async mounted() {
     document.addEventListener("keyup", e => {
       if (e.keyCode === 84) {
-        console.log("halfejwe");
-        this.togglePortfolioText(!this.portfolioTextShown);
+        console.log("Created, Keyup Listener");
+        console.log(this.$refs);
+        this.togglePortfolioText();
       }
     });
 
     setTimeout(() => {
       this.setPortfolioTextTop();
-    }, 1000);
+    }, 2000);
   }
 }
 </script>
