@@ -2,6 +2,7 @@
 import Vue from "vue";
 import { Component, Watch } from "vue-property-decorator";
 
+@Component
 export default class Entry extends Vue {
   portfolioTextShown = false;
   portfolioTextTop = 0;
@@ -24,6 +25,7 @@ export default class Entry extends Vue {
 
   get togglePortfolioText() {
     this.portfolioTextShown = !this.portfolioTextShown;
+    console.log(this.$refs.portfolioText.clientHeight);
   }
 
   get setPortfolioTextTop() {
@@ -42,13 +44,8 @@ export default class Entry extends Vue {
     }
   }
 
-  created() {
-    console.log("asdf");
-  }
-
-  async mounted() {
-    console.log("asl;dfja;sldjkf");
-    document.addEventListener("keyup", (e) => {
+  async created() {
+    document.addEventListener("keyup", e => {
       if (e.keyCode === 84) {
         console.log("halfejwe");
         this.togglePortfolioText(!this.portfolioTextShown);

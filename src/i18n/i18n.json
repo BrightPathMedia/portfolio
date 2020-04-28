@@ -107,6 +107,7 @@
           },
           "desc": "A logo for a fashion-based lifestyle app aimed at staying with the current trend. Two offered concepts."
         },
+
         "5": {
           "name": "Japan Wifi Buddy",
           "url": "/work/jwb",
@@ -123,9 +124,6 @@
             "battledishBody": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
             "tastemakersTitle": "Tastemakers",
             "tastemakersBody": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
-          },
-          "caseStudy": {
-            "body": ""
           }
         }
       }
@@ -296,7 +294,7 @@
             "curly": "/images/portfolio/lately/lately-curly.jpg",
             "straight": "/images/portfolio/lately/lately-straight.jpg"
           },
-          "desc": "Pokémon was a large part of Peter Le's and Amy Kim's lives as kids, as well as that of their friends. They decided to host an art gallery featuring the original 151 pokémon they had grown up with. They acquired the help of their frinds in the Animation/Illustration program at San José State University to hold it for a good cause.",
+          "desc": "Pokémon!! was a large part of Peter Le's and Amy Kim's lives as kids, as well as that of their friends. They decided to host an art gallery featuring the original 151 pokémon they had grown up with. They acquired the help of their frinds in the Animation/Illustration program at San José State University to hold it for a good cause.",
           "bio": {
             "1-title": "The Way We See It",
             "1": "These are proposals for a total overhaul of the UX of the web platform. We brought vibrance and a smooth, capable experience to the brand, focusing on presenting an intuitive and functional interface.",
@@ -304,9 +302,6 @@
             "battledishBody": "Dishcrawl hosted competitions that pitted chefs against chefs, by category. The winner could claim bragging rights and would get the opportunity to be recognized within and around their community.",
             "tastemakersTitle": "Tastemaker",
             "tastemakersBody": "The tastemaker plan was an idea aimed at getting loyal Dishcrawlers to become part of an exclusive group that enjoyed discounts at restaurants in their area, and to feel prized as a member."
-          },
-          "caseStudy": {
-            "body": ""
           }
         }
       }

@@ -1,4 +1,4 @@
-<template lang=pug>
+<template lang="pug">
   Portfolio
     .portfolirow.flex-row-reverse.just-right
       div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-half.portfolitem.portfolitext
@@ -34,13 +34,12 @@ import Component from "vue-class-component";
 
 @Component({
   components: {
-    Portfolio
-  }
+    Portfolio,
+  },
 })
 export default class RareCandy extends Entry {
-  currentItemIndex = 5;
+  currentItemIndex = 8;
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

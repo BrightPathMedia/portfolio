@@ -1,4 +1,4 @@
-<template lang=pug>
+<template lang="pug">
   Layout
     div(class='lg:flex-row').flex.flex-col.my-4.w-full
       div(class='lg:w-1/2 p-4 lg:p-0 lg:mr-8').w-full
@@ -16,7 +16,7 @@ import Component from "vue-class-component";
 @Component
 export default class Whym extends Vue {
   test = 20;
-  currentItemIndex = 1;
+  currentItemIndex = 20;
 
   get currentItem() {
     return this.$t("work.workItems")[this.currentItemIndex];
