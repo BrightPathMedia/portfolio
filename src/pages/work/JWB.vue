@@ -1,16 +1,11 @@
-<template lang=pug>
+<template lang="pug">
   Portfolio
-      #portfolio-view.w-auto.border-t.pt-2.border-black.order-first(
-        v-show="portfolioTextShown"
-        class="lg:w-1/2 ml-4 lg:m-0 lg:ml-8 lg:order-none"
-        :style="{top: '-'+portfolioTextTop+'px'}"
-        ref="portfolioText"
-        )
-        .portfolirow.flex-row-reverse.just-right
+    CaseStudy
+      template(v-slot:caseStudy).portfolirow.flex-row-reverse.just-right
           div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-half.portfolitem.portfolitext
             h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
             p.desc {{ currentItem.desc }}
-      #casestudy-view
+      template(v-slot:portfolio)
         .portfolirow.flex-row-reverse.just-right
           .portfolitext.w-half.portfolitem
             h1.portfolisubhead {{ currentItem.bio["1-title"] }}
@@ -38,16 +33,16 @@
 import Entry from "./Entry.vue";
 import Portfolio from "../../layouts/Portfolio.vue";
 import Component from "vue-class-component";
-
+import CaseStudy from "./CaseStudy.vue";
 @Component({
   components: {
-    Portfolio
-  }
+    Portfolio,
+    CaseStudy,
+  },
 })
 export default class JWB extends Entry {
   currentItemIndex = 5;
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

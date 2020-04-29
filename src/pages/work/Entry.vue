@@ -24,18 +24,6 @@ export default class Entry extends Vue {
     return this.$t("work.workItems")[this.currentItemIndex];
   }
 
-  togglePortfolioText() {
-    this.portfolioTextShown = !this.portfolioTextShown;
-    console.log(this.$refs.portfolioText.clientHeight);
-  }
-
-  setPortfolioTextTop() {
-    console.log(this.$refs);
-    console.log(this.$refs.portfolioText.clientHeight);
-    this.portfolioTextTop =
-      this.$refs.portfolioText.clientHeight - window.innerHeight + 50;
-  }
-
   setItem() {
     const { url } = this.$context;
     for (var key in this.$t("work.workItems")) {
@@ -44,20 +32,6 @@ export default class Entry extends Vue {
         this.currentItemIndex = key;
       }
     }
-  }
-
-  async mounted() {
-    document.addEventListener("keyup", e => {
-      if (e.keyCode === 84) {
-        console.log("Created, Keyup Listener");
-        console.log(this.$refs);
-        this.togglePortfolioText();
-      }
-    });
-
-    setTimeout(() => {
-      this.setPortfolioTextTop();
-    }, 2000);
   }
 }
 </script>
@@ -68,17 +42,5 @@ export default class Entry extends Vue {
     font-weight: 600;
     font-size: 1rem;
   }
-}
-
-#portfolio-view {
-  transition: width 0.75s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-#casestudy-view {
-  position: sticky;
-  -webkit-position: sticky;
-  top: 0px;
-  align-self: flex-start;
 }
 </style>
