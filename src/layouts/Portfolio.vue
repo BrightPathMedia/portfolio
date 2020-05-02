@@ -25,21 +25,27 @@
               @click="toggleLocale()"
               @mouseenter="rotateLocaleBtn()"
             >-->
-            <button id="btn-i18n" :class="localeBtnClass" @click="toggleLocale()">
+            <button
+              id="btn-i18n"
+              :class="localeBtnClass"
+              @click="toggleLocale()"
+            >
               <img
                 svg-inline
                 :alt="English / 日本語"
                 class="h-full w-auto h-max-full inline-block"
                 src="../assets/images/icons-language_24px.svg"
               />
-              <span class="italic hidden sm:inline-block text-xs pl-2">{{ currentLocaleText }}</span>
+              <span class="italic hidden sm:inline-block text-xs pl-2">{{
+                currentLocaleText
+              }}</span>
             </button>
           </div>
 
           <div class="block lg:hidden">
             <button
               class="flex items-center px-3 py-2 text-gray-800 border-none btn-mobile-menu"
-              :class="{'open': mobileLinksShown}"
+              :class="{ open: mobileLinksShown }"
               @click="workLinkActive = mobileLinksShown = !mobileLinksShown"
             >
               <svg
@@ -55,7 +61,7 @@
 
           <div
             class="mobile-menu w-full block lg:flex lg:items-center lg:w-auto"
-            :class="{'hidden': !mobileLinksShown }"
+            :class="{ hidden: !mobileLinksShown }"
           >
             <div class="text-sm text-right lg:flex-grow">
               <span
@@ -66,26 +72,32 @@
                 <g-link
                   class="block lg:inline-block pb-1 lg:w-full lg:text-center lg:font-bold header-link"
                   to="/work"
-                >{{ $t("header.work") }}</g-link>
-                <div class="dropdown-menu" :class="{'shown': workLinkActive}">
+                  >{{ $t("header.work") }}</g-link
+                >
+                <div class="dropdown-menu" :class="{ shown: workLinkActive }">
                   <a
-                    v-for="(val,key) in $t('work.workItems')"
+                    v-for="(val, key) in $t('work.workItems')"
                     :href="val.url"
                     :key="key"
-                    :style="'transition-delay:' + (300 + ((parseInt(key)) * 100)) + 'ms'"
-                  >{{ val.name }}</a>
+                    :style="
+                      'transition-delay:' + (300 + parseInt(key) * 100) + 'ms'
+                    "
+                    >{{ val.name }}</a
+                  >
                 </div>
               </span>
               <br class="lg:hidden" />
               <g-link
                 class="inline-block lg:px-2 lg:mx-1 pb-1 font-bold header-link"
                 to="/about"
-              >{{ $t("header.about") }}</g-link>
+                >{{ $t("header.about") }}</g-link
+              >
               <br class="lg:hidden" />
               <g-link
                 class="inline-block ml-3 pb-1 font-bold header-link"
                 to="/contact"
-              >{{ $t("header.contact") }}</g-link>
+                >{{ $t("header.contact") }}</g-link
+              >
             </div>
           </div>
         </nav>
@@ -95,7 +107,7 @@
         <slot />
       </div>
 
-      <div class="bg-overlay" :class="{'shown': workLinkActive}" />
+      <div class="bg-overlay" :class="{ shown: workLinkActive }" />
     </div>
   </div>
 </template>
@@ -108,7 +120,7 @@ export default {
       mobileLinksShown: false,
       workLinkActive: false,
       localeBtnBeingAnimated: false,
-      localeBtnClass: ""
+      localeBtnClass: "",
     };
   },
 
@@ -139,18 +151,18 @@ export default {
           this.localeBtnClass = "";
         }, 600);
       }
-    }
+    },
   },
 
   computed: {
     currentLocaleText() {
       return this.$i18n.locale == "ja" ? "English" : "日本語";
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 $header-height: 5.6rem;
 @keyframes rotate-screen {
   0% {
@@ -497,6 +509,7 @@ header {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
+  color: red;
 }
 
 @media (max-width: 1279px) {
