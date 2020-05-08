@@ -3,31 +3,31 @@
     CaseStudy.portfolirow.flex-row-reverse.just-right
       template(v-slot:caseStudy)
         .portfolirow.flex-row-reverse.just-right
-          div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-half.portfolitem.portfolitext
+          div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-full.portfolitem.portfolitext
             h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
             p.desc {{ currentItem.desc }}
       template(v-slot:portfolio)
         .portfolirow.flex-row-reverse.just-right
-          .portfolitext.w-half.portfolitem
+          .portfolitext.w-full.portfolitem
             h1.portfolisubhead {{ currentItem.bio["1-title"] }}
             p {{ currentItem.bio[1] }}
         .portfolirow
-          img(:src='currentItem.images.homepage1').portfolitem.w-half
-          img(:src='currentItem.images.homepage2').portfolitem.w-half
+          img(:src='currentItem.images.curly').portfolitem.w-half
+          img(:src='currentItem.images.straight').portfolitem.w-half
         .portfolirow.flex-row-reverse.just-right
           .portfolitext.w-half.portfolitem
             h1.portfolisubhead {{ currentItem.bio["battledishTitle"] }}
             p {{ currentItem.bio["battledishBody"] }}
         .portfolirow
-          img(:src='currentItem.images.battledish').portfolitem
+          img(:src='currentItem.images.curly').portfolitem
         .portfoligroup
           .portfolirow.flex-row-reverse
-            img(:src='currentItem.images.tastemakersLogo').portfolitem.w-half
+            img(:src='currentItem.images.straight').portfolitem.w-half
             .portfolitext.w-half.portfolitem.order-first
               h1.portfolisubhead {{ currentItem.bio["tastemakersTitle"] }}
               p {{ currentItem.bio["tastemakersBody"] }}
           .portfolirow
-            img(:src='currentItem.images.tastemakersCombo').portfolitem
+            img(:src='currentItem.images.curly').portfolitem
 </template>
 
 <script>

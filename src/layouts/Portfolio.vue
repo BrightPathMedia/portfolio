@@ -36,9 +36,9 @@
                 class="h-full w-auto h-max-full inline-block"
                 src="../assets/images/icons-language_24px.svg"
               />
-              <span class="italic hidden sm:inline-block text-xs pl-2">{{
-                currentLocaleText
-              }}</span>
+              <span class="italic hidden sm:inline-block text-xs pl-2">
+                {{ currentLocaleText }}
+              </span>
             </button>
           </div>
 
@@ -475,6 +475,7 @@ header {
 .portfolitem {
   margin: 0 1rem;
   align-self: center;
+  color: red !important;
 
   &:last-child {
     margin-right: 0;
@@ -509,7 +510,6 @@ header {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
-  color: red;
 }
 
 @media (max-width: 1279px) {
