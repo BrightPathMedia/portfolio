@@ -25,20 +25,14 @@
               @click="toggleLocale()"
               @mouseenter="rotateLocaleBtn()"
             >-->
-            <button
-              id="btn-i18n"
-              :class="localeBtnClass"
-              @click="toggleLocale()"
-            >
+            <button id="btn-i18n" :class="localeBtnClass" @click="toggleLocale()">
               <img
                 svg-inline
                 :alt="English / 日本語"
                 class="h-full w-auto h-max-full inline-block"
                 src="../assets/images/icons-language_24px.svg"
               />
-              <span class="italic hidden sm:inline-block text-xs pl-2">
-                {{ currentLocaleText }}
-              </span>
+              <span class="italic hidden sm:inline-block text-xs pl-2">{{ currentLocaleText }}</span>
             </button>
           </div>
 
@@ -72,8 +66,7 @@
                 <g-link
                   class="block lg:inline-block pb-1 lg:w-full lg:text-center lg:font-bold header-link"
                   to="/work"
-                  >{{ $t("header.work") }}</g-link
-                >
+                >{{ $t("header.work") }}</g-link>
                 <div class="dropdown-menu" :class="{ shown: workLinkActive }">
                   <a
                     v-for="(val, key) in $t('work.workItems')"
@@ -82,22 +75,19 @@
                     :style="
                       'transition-delay:' + (300 + parseInt(key) * 100) + 'ms'
                     "
-                    >{{ val.name }}</a
-                  >
+                  >{{ val.name }}</a>
                 </div>
               </span>
               <br class="lg:hidden" />
               <g-link
                 class="inline-block lg:px-2 lg:mx-1 pb-1 font-bold header-link"
                 to="/about"
-                >{{ $t("header.about") }}</g-link
-              >
+              >{{ $t("header.about") }}</g-link>
               <br class="lg:hidden" />
               <g-link
                 class="inline-block ml-3 pb-1 font-bold header-link"
                 to="/contact"
-                >{{ $t("header.contact") }}</g-link
-              >
+              >{{ $t("header.contact") }}</g-link>
             </div>
           </div>
         </nav>
@@ -120,7 +110,7 @@ export default {
       mobileLinksShown: false,
       workLinkActive: false,
       localeBtnBeingAnimated: false,
-      localeBtnClass: "",
+      localeBtnClass: ""
     };
   },
 
@@ -151,14 +141,14 @@ export default {
           this.localeBtnClass = "";
         }, 600);
       }
-    },
+    }
   },
 
   computed: {
     currentLocaleText() {
       return this.$i18n.locale == "ja" ? "English" : "日本語";
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -475,7 +465,6 @@ header {
 .portfolitem {
   margin: 0 1rem;
   align-self: center;
-  color: red !important;
 
   &:last-child {
     margin-right: 0;

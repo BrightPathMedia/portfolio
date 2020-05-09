@@ -1,16 +1,16 @@
 <template lang="pug">
-    div
+    #casestudy-container(ref="caseStudyContainer")
         #casestudy-view(
           v-show="portfolioTextShown"
-          class="lg:w-1/2 ml-2 lg:m-0 lg:ml-4 lg:order-none"
+          class="lg:w-1/2 sm:w-full ml-2 lg:m-0 lg:ml-4 lg:order-none"
           :style="{top: '-'+portfolioTextTop+'px'}"
           ref="portfolioText"
         )
             slot(name="caseStudy")
 
         #portfolio-view(
-          class='w-1/2 p-4 lg:p-0 lg:mr-8 '
-          :class="{ 'lg:w-full': !portfolioTextShown, 'lg:w-1/2, yielded': portfolioTextShown }"
+          class='p-4 lg:p-0 lg:mr-8 '
+          :class="{ 'lg:w-full': !portfolioTextShown, 'w-half yielded': portfolioTextShown }"
           
         )
             slot(name="portfolio")
@@ -26,21 +26,27 @@ export default class CaseStudy extends Vue {
 
   togglePortfolioText() {
     this.portfolioTextShown = !this.portfolioTextShown;
-    console.log(this.$refs.portfolioText.clientHeight);
+    // console.log(this.$refs.portfolioText.clientHeight);
+    this.$refs.caseStudyContainer.style.opacity =
+      this.$refs.caseStudyContainer.style.opacity == 1 ||
+      this.$refs.caseStudyContainer.style.opacity == ""
+        ? 0
+        : 1;
+    console.log(this.$refs.caseStudyContainer.style.opacity);
   }
 
   setPortfolioTextTop() {
-    console.log(this.$refs.portfolioText.clientHeight);
+    // console.log(this.$refs.portfolioText.clientHeight);
     this.portfolioTextTop =
       this.$refs.portfolioText.clientHeight - window.innerHeight + 50;
   }
 
   async mounted() {
     console.log(this.$refs);
-    document.addEventListener("keyup", (e) => {
+    document.addEventListener("keyup", e => {
       if (e.keyCode === 84) {
-        console.log("Created, Keyup Listener");
-        console.log(this.$refs);
+        // console.log("Created, Keyup Listener");
+        // console.log(this.$refs);
         this.togglePortfolioText();
       }
     });
@@ -485,15 +491,17 @@ header {
   font-weight: 400;
 }
 
-.yielded * {
-  display: block;
-  width: 100%;
-}
-
 .yielded .portfolitem {
   display: block;
   width: 100% !important;
   margin: 2rem 1rem !important;
   padding: 0;
+}
+
+@media (min-width: 1279px) {
+  .yielded * {
+    display: block;
+    width: 100%;
+  }
 }
 </style>
