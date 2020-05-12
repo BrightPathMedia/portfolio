@@ -3,7 +3,7 @@
         #casestudy-view(
 
           class="lg:w-1/2 xs:w-full sm:w-full ml-2 lg:m-0 lg:ml-4 lg:order-none"
-          :style="{top: '-'+portfolioTextTop+'px', opacity: '0', width: '0'}"
+          :style="{ opacity: '0', width: '0', height: '0'}"
           ref="portfolioText"
         )
             slot(name="caseStudy")
@@ -64,12 +64,7 @@ export default class CaseStudy extends Vue {
     this.$refs.portfolioText.style.width = this.addPx(
       this.removePx(this.thisComponentWidth) / 2
     );
-    if (this.thisComponentWidth < 1024) {
-      this.$refs.portfolioText.style["min-height"] = this.addPx(250);
-      this.$refs.portfolioText.style["max-height"] = this.addPx(350);
-    } else {
-      this.$refs.portfolioText.style["min-height"] = this.addPx(500);
-    }
+    this.$refs.portfolioText.style["min-height"] = this.addPx(500);
   }
 
   fadeCaseStudy(polarity) {
@@ -174,9 +169,18 @@ export default class CaseStudy extends Vue {
 #casestudy-view {
   position: sticky;
   -webkit-position: sticky;
-  top: 0px;
+  top: 20px;
   align-self: flex-start;
-  overflow: scroll;
+  border: 40px #ffffff00 solid;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  overflow-y: scroll;
+}
+
+@media (max-width: 1023px) {
+  #casestudy-view {
+    width: 100% !important;
+  }
 }
 
 $header-height: 5.6rem;
@@ -532,14 +536,13 @@ header {
     margin: 0 !important;
   }
   .portfolirow .desc {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    padding-right: 0;
+    padding-left: 0;
   }
   .portfolitext {
-    padding: unset !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    max-width: 60%;
+    padding: unset;
+    margin-left: 0;
+    margin-right: 0;
     min-width: 375px;
   }
 
@@ -548,9 +551,9 @@ header {
   }
   .portfolirow {
     flex-wrap: wrap;
-    padding: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .portfolitem {
     margin-top: 2rem !important;
@@ -579,7 +582,6 @@ header {
 }
 
 .ja .desc {
-  padding-right: 4rem;
   font-weight: 400;
   line-height: 2rem;
   font-size: 1.2rem;
@@ -609,11 +611,6 @@ header {
   }
   .w-half {
     width: calc(50% - 1rem);
-  }
-}
-@media (max-width: 1279px) {
-  #casestudy-view {
-    overflow-y: scroll;
   }
 }
 </style>
