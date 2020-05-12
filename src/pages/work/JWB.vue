@@ -1,10 +1,9 @@
 <template lang="pug">
   Portfolio
-    CaseStudy.portfolirow.flex-row-reverse.just-right
+    CaseStudy(:caseTitle="currentItem.name").portfolirow.flex-row-reverse.just-right
       template(v-slot:caseStudy)
         .portfolirow.flex-row-reverse.just-right
-          div(class="lg:border-t").pt-2.border-black.order-first.w-auto.ml-4.w-full.portfolitem.portfolitext
-            h1.text-2xl.font-bold.mb-4 {{ currentItem.name }}
+          .pt-2.order-first.w-auto.ml-4.w-full.portfolitem.portfolitext
             p.desc {{ currentItem.study.body }}
       template(v-slot:portfolio)
         .portfolirow.flex-row-reverse.just-right

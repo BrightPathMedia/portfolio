@@ -1,12 +1,13 @@
 <template lang="pug">
     div
         #casestudy-view(
-
-          class="lg:w-1/2 xs:w-full sm:w-full ml-2 lg:m-0 lg:ml-4 lg:order-none"
+          class="lg:w-1/2 xs:w-full sm:w-full ml-2 lg:m-0 lg:ml-8 xs:pl-4 sm:pl-4 xs:pr-4 sm:pr-4 lg:order-none"
           :style="{ opacity: '0', width: '0', height: '0'}"
           ref="portfolioText"
-        )
-            slot(name="caseStudy")
+        )   
+            h2#case-title.border-black.border-t.text-2xl.font-bold.mb-4 {{ caseTitle }} Case Study
+            #case-body
+              slot(name="caseStudy")
 
         //- #portfolio-view(
           class='p-4 lg:p-0 lg:mr-8 '
@@ -26,9 +27,16 @@
 import Vue from "vue";
 import _ from "lodash";
 import { Component, Watch, Prop } from "vue-property-decorator";
+import { mixins } from "vue-class-component";
+
+const CaseProps = Vue.extend({
+  props: {
+    caseTitle: String
+  }
+});
 
 @Component
-export default class CaseStudy extends Vue {
+export default class CaseStudy extends mixins(Vue, CaseProps) {
   portfolioTextShown = false;
   portfolioFullWidth = true;
   splitHalf = false;
@@ -169,17 +177,39 @@ export default class CaseStudy extends Vue {
 #casestudy-view {
   position: sticky;
   -webkit-position: sticky;
-  top: 20px;
+  top: 0px;
   align-self: flex-start;
-  border: 40px #ffffff00 solid;
-  background: #ffffffcc;
-  backdrop-filter: blur(10px);
-  overflow-y: scroll;
+  border-top: 40px #ffffffdd solid;
+  border-bottom: 40px #ffffff00 solid;
 }
 
-@media (max-width: 1023px) {
+#case-body {
+  background: #ffffffdd;
+  backdrop-filter: blur(10px);
+  max-height: 100vh;
+  overflow-y: scroll;
+  padding-top: 0;
+  margin-bottom: 2rem;
+  border-bottom: 40px #ffffff00 solid;
+}
+
+#case-title {
+  padding: 10px 0;
+  margin-bottom: 0;
+  background: #ffffffdd;
+}
+
+#portfolio-view {
+  margin-right: 0 !important;
+}
+
+@media (max-width: 1279px) {
+  #case-body {
+    max-height: 50vh;
+  }
   #casestudy-view {
     width: 100% !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -508,7 +538,6 @@ header {
 .en .portfolitext {
   display: inline-block;
   font-size: 1.2rem;
-  padding-right: 3rem;
   line-height: 1.7rem;
   font-weight: 400 !important;
 }
@@ -516,9 +545,18 @@ header {
 .ja .portfolitext {
   display: inline-block;
   font-size: 1rem;
-  padding-right: 3rem;
   line-height: 1.7rem;
   font-weight: 400 !important;
+}
+
+@media (min-width: 1280) {
+  .en .portfolitext {
+    padding-right: 3rem;
+  }
+
+  .ja .portfolitext {
+    padding-right: 3rem;
+  }
 }
 
 .portfolitext {
@@ -556,10 +594,8 @@ header {
     margin-bottom: 0;
   }
   .portfolitem {
-    margin-top: 2rem !important;
+    margin-top: 2rem;
     margin: 0 !important;
-    padding-left: 0 !important;
-    padding: 2rem !important;
   }
 }
 
