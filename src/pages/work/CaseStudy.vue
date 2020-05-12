@@ -1,38 +1,127 @@
 <template lang="pug">
-    #casestudy-container(ref="caseStudyContainer")
+    div
         #casestudy-view(
-          v-show="portfolioTextShown"
-          class="lg:w-1/2 sm:w-full ml-2 lg:m-0 lg:ml-4 lg:order-none"
-          :style="{top: '-'+portfolioTextTop+'px'}"
+
+          class="lg:w-1/2 xs:w-full sm:w-full ml-2 lg:m-0 lg:ml-4 lg:order-none"
+          :style="{top: '-'+portfolioTextTop+'px', opacity: '0', width: '0'}"
           ref="portfolioText"
         )
             slot(name="caseStudy")
 
-        #portfolio-view(
+        //- #portfolio-view(
           class='p-4 lg:p-0 lg:mr-8 '
           :class="{ 'lg:w-full': !portfolioTextShown, 'w-half yielded': portfolioTextShown }"
           
+        //- )
+            slot(name="portfolio")
+
+        #portfolio-view(
+          class='lg:w-full p-4 lg:p-0 lg:mr-8 '
+          :class="{ 'yielded': !portfolioFullWidth, 'w-half': splitHalf }"
+          ref="portfolioView"
         )
             slot(name="portfolio")
 </template>
 <script>
 import Vue from "vue";
-import { Component, Watch } from "vue-property-decorator";
+import _ from "lodash";
+import { Component, Watch, Prop } from "vue-property-decorator";
 
 @Component
 export default class CaseStudy extends Vue {
   portfolioTextShown = false;
+  portfolioFullWidth = true;
+  splitHalf = false;
   portfolioTextTop = 0;
+  thisComponentWidth;
+  bezier = [1, 0, 0, 1];
+  fadeDelay = 700;
+
+  removePx(value) {
+    return parseInt(value.split("px")[0]);
+  }
+
+  bezierExpression(bExp) {
+    return `cubic-bezier(${bExp[0]}, ${bExp[1]}, ${bExp[2]}, ${bExp[3]} )`;
+  }
+  transExpression(attr, t) {
+    return `${attr} ${t}ms`;
+  }
+
+  addPx(value) {
+    return value + "px";
+  }
+
+  placeCaseStudy() {
+    this.$refs.portfolioText.style.width = this.addPx(0);
+    this.$refs.portfolioText.style.height = this.addPx(0);
+    this.$refs.portfolioText.style.opacity = 0;
+    this.portfolioFullWidth = false;
+  }
+
+  expandCaseStudy() {
+    this.splitHalf = true;
+    this.$refs.portfolioText.style.width = this.addPx(
+      this.removePx(this.thisComponentWidth) / 2
+    );
+    if (this.thisComponentWidth < 1024) {
+      this.$refs.portfolioText.style["min-height"] = this.addPx(250);
+      this.$refs.portfolioText.style["max-height"] = this.addPx(350);
+    } else {
+      this.$refs.portfolioText.style["min-height"] = this.addPx(500);
+    }
+  }
+
+  fadeCaseStudy(polarity) {
+    console.log("hehehe");
+    this.$refs.portfolioText.style.opacity = polarity ? 1 : 0;
+    this.portfolioFullWidth = !polarity;
+  }
+
+  shrinkCaseStudy() {
+    this.$refs.portfolioText.style.width = this.addPx(0);
+    this.$refs.portfolioText.style.height = this.addPx(0);
+    this.$refs.portfolioText.style["margin-right"] = this.addPx(-15);
+    this.$refs.portfolioText.style["min-height"] = this.addPx(0);
+    this.splitHalf = false;
+    setTimeout(() => {
+      this.portfolioTextShown = false;
+    }, this.fadeDelay);
+  }
 
   togglePortfolioText() {
-    this.portfolioTextShown = !this.portfolioTextShown;
-    // console.log(this.$refs.portfolioText.clientHeight);
-    this.$refs.caseStudyContainer.style.opacity =
-      this.$refs.caseStudyContainer.style.opacity == 1 ||
-      this.$refs.caseStudyContainer.style.opacity == ""
-        ? 0
-        : 1;
-    console.log(this.$refs.caseStudyContainer.style.opacity);
+    if (!this.portfolioTextShown) {
+      console.log("Case Study not shown, starting process");
+
+      // Place (display) #casestudy-view, neutron state
+      this.placeCaseStudy();
+
+      // Widen case study x and y
+      this.expandCaseStudy();
+
+      // Toggle opacity of the #casestudy-view first, delayed
+
+      _.delay(() => {
+        this.portfolioTextShown = true;
+        this.fadeCaseStudy(true);
+      }, this.fadeDelay);
+
+      // Indicate end of display
+      console.log(this.$refs.portfolioText.style.transition);
+    } else {
+      // Fade case study
+      this.fadeCaseStudy(false);
+
+      // shrink and remove case study
+
+      this.shrinkCaseStudy();
+    }
+
+    // Stretch/shrink height of portfolioText
+    this.$refs.portfolioText.style.height = this.$refs.portfolioText.style
+      .height
+      ? "0px"
+      : "50px";
   }
 
   setPortfolioTextTop() {
@@ -43,6 +132,29 @@ export default class CaseStudy extends Vue {
 
   async mounted() {
     console.log(this.$refs);
+    // Animation Prep
+
+    // Adding transition attribute
+    this.$refs.portfolioText.style.transition = `${this.transExpression(
+      "all",
+      this.fadeDelay
+    )} ${this.bezierExpression(this.bezier)}`;
+    this.$refs.portfolioView.style.transition = `${this.transExpression(
+      "all",
+      this.fadeDelay
+    )} ${this.bezierExpression(this.bezier)}`;
+
+    // Get component width for animation calculations
+    this.thisComponentWidth = window
+      .getComputedStyle(this.$el)
+      .getPropertyValue("width");
+
+    console.log(
+      window
+        .getComputedStyle(this.$refs.portfolioText)
+        .getPropertyValue("transition-timing-function")
+    );
+
     document.addEventListener("keyup", e => {
       if (e.keyCode === 84) {
         // console.log("Created, Keyup Listener");
@@ -59,16 +171,12 @@ export default class CaseStudy extends Vue {
 </script>
 
 <style lang="scss" scoped>
-#portfolio-view {
-  transition: width 0.75s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
 #casestudy-view {
   position: sticky;
   -webkit-position: sticky;
   top: 0px;
   align-self: flex-start;
+  overflow: scroll;
 }
 
 $header-height: 5.6rem;
@@ -464,12 +572,6 @@ header {
   flex-grow: 1;
 }
 
-@media (min-width: 1279px) {
-  .w-half {
-    width: calc(50% - 1rem);
-  }
-}
-
 .desc {
   padding-right: 4rem;
   font-size: 1.4rem;
@@ -492,16 +594,26 @@ header {
 }
 
 .yielded .portfolitem {
-  display: block;
   width: 100% !important;
-  margin: 2rem 1rem !important;
-  padding: 0;
+  margin: 2rem 0;
+}
+
+.yielded .portfolitem:first-child {
+  margin-top: 0;
 }
 
 @media (min-width: 1279px) {
   .yielded * {
     display: block;
     width: 100%;
+  }
+  .w-half {
+    width: calc(50% - 1rem);
+  }
+}
+@media (max-width: 1279px) {
+  #casestudy-view {
+    overflow-y: scroll;
   }
 }
 </style>
