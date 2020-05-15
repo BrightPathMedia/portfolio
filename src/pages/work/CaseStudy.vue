@@ -181,22 +181,21 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   align-self: flex-start;
   border-top: 40px #ffffffdd solid;
   border-bottom: 40px #ffffff00 solid;
+  background: #ffffffdd;
+  backdrop-filter: blur(10px);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #case-body {
-  background: #ffffffdd;
-  backdrop-filter: blur(10px);
-  max-height: 100vh;
   overflow-y: scroll;
   padding-top: 0;
   margin-bottom: 2rem;
-  border-bottom: 40px #ffffff00 solid;
 }
 
 #case-title {
   padding: 10px 0;
   margin-bottom: 0;
-  background: #ffffffdd;
 }
 
 #portfolio-view {

@@ -1,6 +1,6 @@
 <template lang="pug">
   Portfolio
-    CaseStudy(:caseTitle="currentItem.name").portfolirow.flex-row-reverse.just-right
+    CaseStudy(:caseTitle="currentItem.name", class="sm:w-full").portfolirow.flex-row-reverse.just-right
       template(v-slot:caseStudy)
         .portfolirow.flex-row-reverse.just-right
           .pt-2.order-first.w-auto.ml-4.w-full.portfolitem.portfolitext
