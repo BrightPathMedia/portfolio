@@ -5,7 +5,7 @@
           :style="{ opacity: '0', width: '0', height: '0'}"
           ref="portfolioText"
         )   
-            h2#case-title.border-black.border-t.text-2xl.font-bold.mb-4 {{ caseTitle }} Case Study
+            h2(class="lg:border-black lg:border-t")#case-title.text-2xl.font-bold.mb-4 {{ caseTitle }} Case Study
             #case-body
               slot(name="caseStudy")
 
@@ -62,7 +62,7 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
   placeCaseStudy() {
     this.$refs.portfolioText.style.width = this.addPx(0);
-    this.$refs.portfolioText.style.height = this.addPx(0);
+    // this.$refs.portfolioText.style.height = this.addPx(0);
     this.$refs.portfolioText.style.opacity = 0;
     this.portfolioFullWidth = false;
   }
@@ -72,7 +72,9 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
     this.$refs.portfolioText.style.width = this.addPx(
       this.removePx(this.thisComponentWidth) / 2
     );
-    this.$refs.portfolioText.style["min-height"] = this.addPx(500);
+    // this.$refs.portfolioText.style["min-height"] = this.addPx(500);
+    // this.$refs.portfolioText.style.height = "100vh";
+    this.$refs.portfolioText.classList.add("height-adjust");
   }
 
   fadeCaseStudy(polarity) {
@@ -85,11 +87,13 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
     this.$refs.portfolioText.style.width = this.addPx(0);
     this.$refs.portfolioText.style.height = this.addPx(0);
     this.$refs.portfolioText.style["margin-right"] = this.addPx(-15);
-    this.$refs.portfolioText.style["min-height"] = this.addPx(0);
+    // this.$refs.portfolioText.style["min-height"] = this.addPx(0);
+    this.$refs.portfolioText.classList.add("hideCase");
     this.splitHalf = false;
     setTimeout(() => {
       this.portfolioTextShown = false;
     }, this.fadeDelay);
+    this.$refs.portfolioText.classList.remove("height-adjust");
   }
 
   togglePortfolioText() {
@@ -116,15 +120,14 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
       this.fadeCaseStudy(false);
 
       // shrink and remove case study
-
       this.shrinkCaseStudy();
     }
 
     // Stretch/shrink height of portfolioText
-    this.$refs.portfolioText.style.height = this.$refs.portfolioText.style
-      .height
-      ? "0px"
-      : "50px";
+    // this.$refs.portfolioText.style.height = this.$refs.portfolioText.style
+    //   .height
+    //   ? "0px"
+    //   : "50px";
   }
 
   setPortfolioTextTop() {
@@ -179,21 +182,20 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   -webkit-position: sticky;
   top: 0px;
   align-self: flex-start;
-  border-top: 40px #ffffffdd solid;
-  border-bottom: 40px #ffffff00 solid;
-  background: #ffffffdd;
   backdrop-filter: blur(10px);
-  overflow-y: scroll;
-  overflow-x: hidden;
+}
+
+.hideCase {
+  min-height: 0;
 }
 
 #case-body {
-  overflow-y: scroll;
-  padding-top: 0;
   margin-bottom: 2rem;
 }
 
 #case-title {
+  position: sticky;
+  top: 0;
   padding: 10px 0;
   margin-bottom: 0;
 }
@@ -201,14 +203,44 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 #portfolio-view {
   margin-right: 0 !important;
 }
+@media (min-width: 1280px) {
+  .height-adjust {
+    min-height: 100vh;
+  }
+  #casestudy-view {
+    top: 2rem;
+    max-height: 100vh;
+    padding-bottom: 2rem;
+    overflow-y: scroll;
+  }
+
+  #case-title {
+    background: white;
+  }
+}
 
 @media (max-width: 1279px) {
+  .height-adjust {
+    min-height: 50vh;
+  }
   #case-body {
     max-height: 50vh;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
   #casestudy-view {
     width: 100% !important;
     margin-left: 0 !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: #eeeeeeef;
+    border-top: 40px #eeeeee00 solid;
+    border-bottom: 40px #eeeeee00 solid;
+    overflow: hidden;
   }
 }
 
@@ -580,7 +612,7 @@ header {
     padding: unset;
     margin-left: 0;
     margin-right: 0;
-    min-width: 375px;
+    min-width: 300px;
   }
 
   .portfolirow.just-right {
