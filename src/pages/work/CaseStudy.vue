@@ -2,12 +2,14 @@
     div
         #casestudy-view(
           class="lg:w-1/2 xs:w-full sm:w-full ml-2 lg:m-0 lg:ml-8 xs:pl-4 sm:pl-4 xs:pr-4 sm:pr-4 lg:order-none"
-          :style="{ opacity: '0', width: '0', height: '0'}"
+          :style="{ opacity: '0', width: '0', height: '200px'}"
           ref="portfolioText"
         )   
             h2(class="lg:border-black lg:border-t")#case-title.text-2xl.font-bold.mb-4 {{ caseTitle }} Case Study
             #case-body
-              slot(name="caseStudy")
+            p.desc(ref="caseBody")
+            //- slot(name="caseStudy")
+
 
         //- #portfolio-view(
           class='p-4 lg:p-0 lg:mr-8 '
@@ -31,7 +33,8 @@ import { mixins } from "vue-class-component";
 
 const CaseProps = Vue.extend({
   props: {
-    caseTitle: String
+    caseTitle: String,
+    caseBody: String
   }
 });
 
@@ -61,9 +64,9 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   }
 
   placeCaseStudy() {
-    this.$refs.portfolioText.style.width = this.addPx(0);
+    // this.$refs.portfolioText.style.width = this.addPx(0);
     // this.$refs.portfolioText.style.height = this.addPx(0);
-    this.$refs.portfolioText.style.opacity = 0;
+    // this.$refs.portfolioText.style.opacity = 0;
     this.portfolioFullWidth = false;
   }
 
@@ -86,7 +89,6 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   shrinkCaseStudy() {
     this.$refs.portfolioText.style.width = this.addPx(0);
     this.$refs.portfolioText.style.height = this.addPx(0);
-    this.$refs.portfolioText.style["margin-right"] = this.addPx(-15);
     // this.$refs.portfolioText.style["min-height"] = this.addPx(0);
     this.$refs.portfolioText.classList.add("hideCase");
     this.splitHalf = false;
@@ -172,6 +174,10 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
     setTimeout(() => {
       this.setPortfolioTextTop();
     }, 1000);
+
+    // Now with HTML in the JSON, unescaping said HTML for body text, placing in description area.
+    var e = this.$refs.caseBody;
+    e.innerHTML = this.caseBody;
   }
 }
 </script>
@@ -205,7 +211,7 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 }
 @media (min-width: 1280px) {
   .height-adjust {
-    min-height: 100vh;
+    min-height: 80vh;
   }
   #casestudy-view {
     top: 2rem;
