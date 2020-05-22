@@ -6,6 +6,8 @@
       "contact": "Contact"
     },
 
+    "caseStudyShowPhrase": { "text": "Show Case Study" },
+
     "index": {
       "slides": {
         "1": {
@@ -181,6 +183,8 @@
       "about": "会社について",
       "contact": "お問い合わせ"
     },
+
+    "caseStudyShowPhrase": { "text": "Show Case Study" },
 
     "index": {
       "slides": {

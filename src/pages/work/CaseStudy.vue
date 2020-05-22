@@ -1,20 +1,19 @@
 <template lang="pug">
-    div
+    div 
         #casestudy-view(
           class="lg:w-1/2 xs:w-full sm:w-full ml-2 lg:m-0 lg:ml-8 xs:pl-4 sm:pl-4 xs:pr-4 sm:pr-4 lg:order-none"
-          :style="{ opacity: '0', width: '0', height: '200px'}"
+          :style="{ opacity: '0', width: '20px', height: '0', minHeight: '0'}"
           ref="portfolioText"
         )   
             h2(class="lg:border-black lg:border-t")#case-title.text-2xl.font-bold.mb-4 {{ caseTitle }} Case Study
             #case-body
-            p.desc(ref="caseBody")
+              p.desc(ref="caseBody")
             //- slot(name="caseStudy")
 
 
         //- #portfolio-view(
           class='p-4 lg:p-0 lg:mr-8 '
           :class="{ 'lg:w-full': !portfolioTextShown, 'w-half yielded': portfolioTextShown }"
-          
         //- )
             slot(name="portfolio")
 
@@ -45,8 +44,10 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   splitHalf = false;
   portfolioTextTop = 0;
   thisComponentWidth;
-  bezier = [1, 0, 0, 1];
-  fadeDelay = 700;
+  bezier = [0.5, 0.5, 0, 1];
+  fadeDelay = 800;
+
+  $t = this.$t.bind(this);
 
   removePx(value) {
     return parseInt(value.split("px")[0]);
@@ -82,13 +83,22 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
   fadeCaseStudy(polarity) {
     console.log("hehehe");
-    this.$refs.portfolioText.style.opacity = polarity ? 1 : 0;
-    this.portfolioFullWidth = !polarity;
+    if (polarity) {
+      this.portfolioFullWidth = !polarity;
+      setTimeout(() => {
+        this.$refs.portfolioText.style.opacity = polarity ? 1 : 0;
+      }, this.fadeDelay);
+    } else {
+      this.$refs.portfolioText.style.opacity = polarity ? 1 : 0;
+      setTimeout(() => {
+        this.portfolioFullWidth = !polarity;
+      }, this.fadeDelay);
+    }
   }
 
   shrinkCaseStudy() {
-    this.$refs.portfolioText.style.width = this.addPx(0);
-    this.$refs.portfolioText.style.height = this.addPx(0);
+    this.$refs.portfolioText.style.width = this.addPx(35);
+    // this.$refs.portfolioText.style.height = this.addPx(0);
     // this.$refs.portfolioText.style["min-height"] = this.addPx(0);
     this.$refs.portfolioText.classList.add("hideCase");
     this.splitHalf = false;
@@ -103,17 +113,15 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
       console.log("Case Study not shown, starting process");
 
       // Place (display) #casestudy-view, neutron state
-      this.placeCaseStudy();
+      // this.placeCaseStudy();
 
       // Widen case study x and y
       this.expandCaseStudy();
 
       // Toggle opacity of the #casestudy-view first, delayed
 
-      _.delay(() => {
-        this.portfolioTextShown = true;
-        this.fadeCaseStudy(true);
-      }, this.fadeDelay);
+      this.portfolioTextShown = true;
+      this.fadeCaseStudy(true);
 
       // Indicate end of display
       console.log(this.$refs.portfolioText.style.transition);
@@ -122,7 +130,9 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
       this.fadeCaseStudy(false);
 
       // shrink and remove case study
-      this.shrinkCaseStudy();
+      setTimeout(() => {
+        this.shrinkCaseStudy();
+      }, this.fadeDelay);
     }
 
     // Stretch/shrink height of portfolioText
@@ -139,6 +149,18 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   }
 
   async mounted() {
+    let ptext = document.querySelectorAll(".portfolitext");
+
+    _.forEach(ptext, x => {
+      console.log(x);
+      x.classList.add("studyShow");
+      let studyShowButton = document.createElement("div");
+      let showButtonText = document.createTextNode(this.caseStudyButtonPhrase);
+      studyShowButton.appendChild(showButtonText);
+      studyShowButton.classList.add("studyShowButton");
+      x.append(studyShowButton);
+    });
+
     console.log(this.$refs);
     // Animation Prep
 
@@ -182,8 +204,20 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.studyShow .studyShowButton {
+  color: red;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid red;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
 #casestudy-view {
+  height: 0px;
   position: sticky;
   -webkit-position: sticky;
   top: 0px;
@@ -192,7 +226,7 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 }
 
 .hideCase {
-  min-height: 0;
+  min-height: 80px !important;
 }
 
 #case-body {
@@ -207,12 +241,17 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 }
 
 #portfolio-view {
-  margin-right: 0 !important;
+  // margin-right: 0 !important;
 }
 @media (min-width: 1280px) {
   .height-adjust {
-    min-height: 80vh;
+    min-height: 80vh !important;
   }
+
+  .hideCase {
+    margin-right: -35px;
+  }
+
   #casestudy-view {
     top: 2rem;
     max-height: 100vh;
@@ -226,8 +265,11 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 }
 
 @media (max-width: 1279px) {
+  .desc {
+    padding-bottom: 10rem;
+  }
   .height-adjust {
-    min-height: 50vh;
+    min-height: 50vh !important;
   }
   #case-body {
     max-height: 50vh;
