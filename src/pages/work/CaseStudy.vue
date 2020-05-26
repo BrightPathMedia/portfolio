@@ -49,6 +49,8 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
   $t = this.$t.bind(this);
 
+  caseStudyButtonPhrase = this.i18n.t("caseStudyShowPhrase.text");
+
   removePx(value) {
     return parseInt(value.split("px")[0]);
   }
