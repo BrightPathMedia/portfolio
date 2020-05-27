@@ -75,9 +75,10 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
   expandCaseStudy() {
     this.splitHalf = true;
-    this.$refs.portfolioText.style.width = this.addPx(
-      this.removePx(this.thisComponentWidth) / 2
-    );
+    this.$refs.portfolioText.style.width = "50%";
+    // this.$refs.portfolioText.style.width = this.addPx(
+    //   this.removePx(this.thisComponentWidth) / 2
+    // );
     // this.$refs.portfolioText.style["min-height"] = this.addPx(500);
     // this.$refs.portfolioText.style.height = "100vh";
     this.$refs.portfolioText.classList.add("height-adjust");
@@ -157,9 +158,10 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
       console.log(x);
       x.classList.add("studyShow");
       let studyShowButton = document.createElement("div");
-      let showButtonText = document.createTextNode(this.caseStudyButtonPhrase);
+      let showButtonText = document.createTextNode("MORE INFO");
       studyShowButton.appendChild(showButtonText);
       studyShowButton.classList.add("studyShowButton");
+      studyShowButton.addEventListener("click", this.togglePortfolioText);
       x.append(studyShowButton);
     });
 
@@ -208,14 +210,20 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
 <style lang="scss">
 .studyShow .studyShowButton {
-  color: red;
+  color: #333;
   font-size: 0.75rem;
   background: rgba(255, 255, 255, 0.5);
-  border: 2px solid red;
+  border: 2px solid #333;
   padding: 8px 16px;
   display: inline-block;
   margin-top: 10px;
   border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    color: #00d49c;
+    border-color: #00d49c;
+  }
+  transition: all cubic-bezier(0.75, 0.25, 0.25, 0.75) 600ms;
 }
 
 #casestudy-view {
@@ -250,6 +258,10 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   // margin-right: 0 !important;
 }
 @media (min-width: 1280px) {
+  .content {
+    padding-right: 1.2rem;
+  }
+
   .height-adjust {
     min-height: 80vh !important;
   }
@@ -349,7 +361,8 @@ header {
 }
 
 #home-link svg {
-  width: 250px;
+  width: 275px;
+  margin-left: -20px;
 }
 
 #btn-i18n {

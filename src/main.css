@@ -34,3 +34,9 @@ body {
     opacity: 0.8 !important;
   }
 }
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1480px;
+  }
+}

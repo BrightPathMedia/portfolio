@@ -7,7 +7,7 @@
             p.desc {{ currentItem.study.body }}
       template(v-slot:portfolio)
         .portfolirow.flex-row-reverse.just-right
-          .portfolitext.w-full.portfolitem
+          .portfolitext.w-half.portfolitem
             h1.portfolisubhead {{ currentItem.bio["1-title"] }}
             p {{ currentItem.bio[1] }}
         .portfolirow

@@ -204,7 +204,8 @@ header {
 }
 
 #home-link svg {
-  width: 250px;
+  width: 275px;
+  margin-left: -20px;
 }
 
 #btn-i18n {
@@ -459,7 +460,7 @@ header {
 
 .portfolirow {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .portfolitem {
@@ -566,7 +567,7 @@ header {
 }
 
 .just-right {
-  justify-content: right;
+  // justify-content: right;
 }
 
 .font-semibold {
