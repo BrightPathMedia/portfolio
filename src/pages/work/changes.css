@@ -1,0 +1,64 @@
+.device-col .device {
+  padding: 40px;
+}
+
+#booking-form-modal .modal-content .device.selected:after {
+  /* (NOW BEFORE) */
+  content: "選択";
+  width: 2rem;
+  height: 2rem;
+  transition: cubic-bezier(1, 0, 0, 1) 200ms;
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  right: 0;
+  background-color: #56beeb;
+  width: 100%;
+  color: white;
+  padding: 0.5rem;
+  padding-top: 0.2rem;
+}
+
+#booking-form-modal .modal-content .device.selected {
+  /* (removed box-shadow) */
+  border: 2px solid #28aae2;
+}
+
+#booking-form-modal .modal-content .device-col {
+  /* (removed padding on left-right) */
+}
+
+#booking-form-modal .modal-content .device:hover {
+  /* (remove box shadow) */
+  border: 2px solid #56beeb !important;
+}
+
+ul {
+  list-style: none;
+}
+
+#booking-form-modal .modal-content .device ul.specs {
+  margin: 12px 0;
+}
+
+#booking-form-modal .modal-content .device.selected:hover:before {
+  background-color: #56beeb;
+}
+
+.x1_5 {
+  font-size: 150%;
+  font-weight: 900;
+  color: #28aae2;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 0.125rem;
+  font-size: inherit;
+}
+
+@media (max-width: 767px) {
+  #booking-form-modal .modal-dialog .modal-body .device {
+    /* Remove padding (at least just for the main buttons) */
+  }
+}

@@ -49,7 +49,7 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
   $t = this.$t.bind(this);
 
-  caseStudyButtonPhrase = this.i18n.t("caseStudyShowPhrase.text");
+  // caseStudyButtonPhrase = this.i18n.t("caseStudyShowPhrase.text");
 
   removePx(value) {
     return parseInt(value.split("px")[0]);
@@ -233,6 +233,10 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 
 #case-body {
   margin-bottom: 2rem;
+  p {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 #case-title {
