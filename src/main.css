@@ -40,3 +40,7 @@ body {
     max-width: 1480px;
   }
 }
+
+.ui-btn.main {
+  background-color: #00d49c;
+}

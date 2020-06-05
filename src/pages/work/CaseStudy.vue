@@ -5,7 +5,8 @@
           :style="{ opacity: '0', width: '20px', height: '0', minHeight: '0'}"
           ref="portfolioText"
         )   
-            h2(class="lg:border-black lg:border-t")#case-title.text-2xl.font-bold.mb-4 {{ caseTitle }} Case Study
+            h2(class="lg:border-black lg:border-t")#case-title.text-2xl.font-bold.mb-4.d-inline-block {{ caseTitle }} Case Study
+              i.fa.fa-times-circle-o.close-button.ml-2(@click="togglePortfolioText")
             #case-body
               p.desc(ref="caseBody")
             //- slot(name="caseStudy")
@@ -33,8 +34,8 @@ import { mixins } from "vue-class-component";
 const CaseProps = Vue.extend({
   props: {
     caseTitle: String,
-    caseBody: String
-  }
+    caseBody: String,
+  },
 });
 
 @Component
@@ -46,6 +47,8 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   thisComponentWidth;
   bezier = [0.5, 0.5, 0, 1];
   fadeDelay = 800;
+  closeButtonText = "LESS INFO";
+  openButtonText = "MORE INFO";
 
   $t = this.$t.bind(this);
 
@@ -111,9 +114,33 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
     this.$refs.portfolioText.classList.remove("height-adjust");
   }
 
+  toggleButtonText(willShowButton) {
+    if (willShowButton) {
+      // select element by class
+      let buttons = document.querySelectorAll(".studyShowButton");
+      // For each node, change gext
+      _.forEach(buttons, (x) => {
+        console.log(x);
+        x.textContent = this.closeButtonText;
+      });
+    } else {
+      // select element by class
+      let buttons = document.querySelectorAll(".studyShowButton");
+
+      // Change text node
+      _.forEach(buttons, (x) => {
+        console.log(x);
+        x.textContent = this.openButtonText;
+      });
+    }
+  }
+
   togglePortfolioText() {
     if (!this.portfolioTextShown) {
       console.log("Case Study not shown, starting process");
+
+      //toggle the button text
+      this.toggleButtonText(true);
 
       // Place (display) #casestudy-view, neutron state
       // this.placeCaseStudy();
@@ -129,6 +156,9 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
       // Indicate end of display
       console.log(this.$refs.portfolioText.style.transition);
     } else {
+      //Toggle the buttons
+      this.toggleButtonText(false);
+
       // Fade case study
       this.fadeCaseStudy(false);
 
@@ -154,7 +184,7 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
   async mounted() {
     let ptext = document.querySelectorAll(".portfolitext");
 
-    _.forEach(ptext, x => {
+    _.forEach(ptext, (x) => {
       console.log(x);
       x.classList.add("studyShow");
       let studyShowButton = document.createElement("div");
@@ -189,7 +219,7 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
         .getPropertyValue("transition-timing-function")
     );
 
-    document.addEventListener("keyup", e => {
+    document.addEventListener("keyup", (e) => {
       if (e.keyCode === 84) {
         // console.log("Created, Keyup Listener");
         // console.log(this.$refs);
@@ -209,6 +239,19 @@ export default class CaseStudy extends mixins(Vue, CaseProps) {
 </script>
 
 <style lang="scss">
+.close-button {
+  float: right;
+  cursor: pointer;
+  &:hover {
+    color: #00d49c;
+    border-color: #00d49c;
+  }
+  transition: all cubic-bezier(0.75, 0.25, 0.25, 0.75) 600ms;
+}
+.fa.fa-times-circle-o.close-button {
+  font-size: 2rem;
+}
+
 .studyShow .studyShowButton {
   color: #333;
   font-size: 0.75rem;

@@ -6,6 +6,12 @@
       :class="$i18n.locale"
     >
       <header class="flex-none lg:px-2">
+        <link
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous"
+        />
         <nav class="flex items-center justify-between flex-wrap py-2">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
             <g-link to="/" id="home-link">
