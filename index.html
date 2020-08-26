@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BrightPath Media</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="viewport" content="width=device-width, minimal-ui" />
+
+    <style type="text/css">
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      #page-1 {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        filter: blur(0);
+        background: rgba(255, 255, 255, 0);
+
+        transition: all 3000ms cubic-bezier(0, 1, 0, 1);
+      }
+
+      #page-1 svg {
+        width: 40%;
+        min-width: 300px;
+        z-index: 99;
+        cursor: pointer;
+      }
+
+      #page-1.inactive {
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      #page-1.inactive svg {
+        filter: blur(10px);
+        cursor: default;
+      }
+
+      #logo-main-svg > .logo-svg--icon,
+      #logo-main-svg > .logo-svg--text {
+        fill: white !important;
+      }
+
+      #page-1,
+      #page-2 {
+        transition: all 1000ms cubic-bezier(0, 1, 0, 1);
+      }
+
+      #bgvideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: auto;
+      }
+
+      #bgvideo.inactive {
+        filter: blur(10px);
+      }
+
+      #page-2 {
+        position: absolute;
+        width: 100vw;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 30vh;
+        max-height: 400px;
+        /* background: white; */
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        transform: translateY(30vh);
+      }
+
+      .page-2-bg {
+        width: 100vw;
+        bottom: 0;
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        left: 0;
+        height: 30vh;
+        max-height: 400px;
+        background: white;
+        display: inline-block;
+      }
+
+      #page-2.active {
+        transform: translateY(0);
+        transition: all 1000ms cubic-bezier(0, 1, 0, 1);
+      }
+
+      #page-2 .clickoutBg {
+        pointer-events: none;
+      }
+
+      #page-2.active .clickoutBg {
+        pointer-events: all;
+      }
+
+      #logo-footer-svg {
+        width: 50vw;
+        max-width: 250px;
+        margin: 0 16px;
+      }
+
+      #page-2 .contact div {
+        display: inline-block;
+        padding: 0 16px;
+      }
+
+      #page-2 .contact svg {
+        height: 20px;
+        width: 20px;
+      }
+
+      @media (max-width: 767px) {
+        #page-2 {
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        #logo-main-svg {
+          margin-bottom: 100px;
+        }
+      }
+
+      .clickoutBg {
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        position: fixed;
+        z-index: -2;
+      }
+    </style>
+
+    <script type="text/javascript">
+      bpm = { infoShown: false };
+      localStorage.setItem("infoDisplayed", JSON.stringify(false));
+
+      function showInfo() {
+        document.querySelector("#page-1").classList.add("inactive");
+        document.querySelector("#bgvideo").classList.add("inactive");
+        document.querySelector("#page-2").classList.add("active");
+        bpm.infoShown = true;
+        localStorage.setItem("infoDisplayed", true);
+      }
+
+      function hideInfo() {
+        document.querySelector("#page-1").classList.remove("inactive");
+        document.querySelector("#bgvideo").classList.remove("inactive");
+        document.querySelector("#page-2").classList.remove("active");
+        bpm.infoShown = false;
+        localStorage.setItem("infoDisplayed", false);
+      }
+
+      window.onload = function() {
+        document
+          .querySelector(".clickoutBg")
+          .addEventListener("click", function(e) {
+            if (localStorage.getItem("infoDisplayed")) {
+              console.log("alsdjf");
+              hideInfo();
+            }
+          });
+
+        document
+          .querySelector("#logo-main-svg")
+          .addEventListener("click", function(e) {
+            console.log("hasiofw");
+            showInfo();
+          });
+      };
+
+      window.onwheel = function(e) {
+        let dY = e.deltaY;
+        if (localStorage.getItem("infoDisplayed") != "true" && dY > 0) {
+          console.log(e);
+          showInfo();
+          console.log(localStorage.getItem("infoDisplayed"));
+        } else if (dY < 0) {
+          hideInfo();
+        }
+      };
+
+      document.addEventListener("touchstart", handleTouchStart, false);
+      document.addEventListener("touchmove", handleTouchMove, false);
+
+      var xDown = null;
+      var yDown = null;
+
+      function getTouches(evt) {
+        return (
+          evt.touches || evt.originalEvent.touches // browser API
+        ); // jQuery
+      }
+
+      function handleTouchStart(evt) {
+        const firstTouch = getTouches(evt)[0];
+        xDown = firstTouch.clientX;
+        yDown = firstTouch.clientY;
+      }
+
+      function handleTouchMove(evt) {
+        if (!xDown || !yDown) {
+          return;
+        }
+
+        var xUp = evt.touches[0].clientX;
+        var yUp = evt.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+          /*most significant*/
+          if (xDiff > 0) {
+            /* left swipe */
+          } else {
+            /* right swipe */
+          }
+        } else {
+          if (yDiff > 0) {
+            /* up swipe */
+            showInfo();
+          } else {
+            /* down swipe */
+            hideInfo();
+          }
+        }
+        /* reset values */
+        xDown = null;
+        yDown = null;
+      }
+    </script>
+  </head>
+
+  <body>
+    <video autoplay muted loop playsinline id="bgvideo">
+      <source src="./bpm-ink-bg.mp4" type="video/mp4" />
+      <source src="bpm-bg.webm" type="video/webm" />
+      <source src="bpm-bg.ogg" type="video/ogg" />
+    </video>
+    <section id="page-1">
+      <svg
+        id="logo-main-svg"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 372.48 99.86"
+      >
+        <defs>
+          <linearGradient
+            id="e23e064d-0ff4-42b2-9ac1-db7c57f70542"
+            x1="55.14"
+            y1="31.82"
+            x2="33.42"
+            y2="74.27"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0" stop-color="#00d49c" />
+            <stop offset="1" stop-color="#ade900" />
+          </linearGradient>
+        </defs>
+        <title>BrightPath</title>
+        <path
+          class="logo-svg--icon"
+          d="M34.82,27.57v4.81A1.63,1.63,0,0,0,36.44,34l6.28,0a.2.2,0,0,1,.08.38L19.44,44.37A1.78,1.78,0,0,0,18.35,46v7.27a1.49,1.49,0,0,0,2.21,1.3l30.32-17a.29.29,0,0,1,.32.47L18.89,64.68a1.48,1.48,0,0,0-.54,1.14V76.51A1.49,1.49,0,0,0,19.84,78H30.53a1.48,1.48,0,0,0,1.14-.54L58.3,45.15a.28.28,0,0,1,.46.32l-17,30.31A1.49,1.49,0,0,0,43.07,78h7.38a1.61,1.61,0,0,0,1.49-1l10-23.44a.2.2,0,0,1,.39.08l0,6.25a1.63,1.63,0,0,0,1.63,1.63h4.86A1.49,1.49,0,0,0,70.26,60V27.57a1.48,1.48,0,0,0-1.48-1.48H36.31A1.49,1.49,0,0,0,34.82,27.57Z"
+          style="fill: url(#e23e064d-0ff4-42b2-9ac1-db7c57f70542);"
+        />
+        <path
+          class="logo-svg--text"
+          d="M109.6,34.13c0,3.25-.8,5.81-4.76,7.46C109.45,43,111,46.1,111,50.05c0,8-6.06,10.27-14.32,10.27H77.3V25.26H97C105.19,25.26,109.6,27.92,109.6,34.13ZM91.77,38.84h2.61A1.68,1.68,0,0,0,96.13,37a1.66,1.66,0,0,0-1.75-1.75H91.77Zm0,11.31h3.16a1.86,1.86,0,0,0,0-3.7H91.77Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M126.13,47.45v13H113v-24h11.41l.21,1.91c1.35-1.16,3.6-3.06,8.36-2.41V47.6A9.71,9.71,0,0,0,126.13,47.45Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M141.55,34.28c-3.9,0-6.81-2-6.81-6.06s2.91-6.11,6.81-6.11,6.81,2,6.81,6.11S145.46,34.28,141.55,34.28Zm-6.61,2.1v24h13.17v-24Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M167.94,38.89l.15-2.51h11.42V58.22c0,10.21-7.36,14.12-15.27,14.12-5.11,0-7.71-.4-11.62-1.8V60a19,19,0,0,0,8.71,1.75c2.81,0,5.06-.7,5.06-2.65v-.8A9.32,9.32,0,0,1,160.58,60c-7.26,0-10.36-5.16-10.36-12.27s3.1-12.27,10.36-12.27A10.43,10.43,0,0,1,167.94,38.89Zm-4.1,9.21c0,1.8.2,2.55,1.4,2.55a2.26,2.26,0,0,0,1.15-.3v-4.5a2.31,2.31,0,0,0-1.25-.3C163.89,45.55,163.84,46.75,163.84,48.1Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M202,35.48c6.61,0,8.71,4.11,8.71,8.71V60.42H197.54V47.3c0-.95-.6-1-.95-1a1.68,1.68,0,0,0-1.1.35V60.42H182.32V25.36h13.17V37.18A13,13,0,0,1,202,35.48Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M232.3,36.38V46.6h-3.91v2.15c0,1.8,1.4,1.9,2.46,1.9a7,7,0,0,0,1.6-.2v10a32.63,32.63,0,0,1-7.16.9c-4.66,0-10.07-1.6-10.07-10.36V46.6h-2.8V36.38h2.8V30.32l13.17-3v9.06Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M268.46,39.49c0,10.61-7.07,14.17-16.33,14.17h-2.81v6.76H235.25V25.36H252C261.39,25.36,268.46,28.87,268.46,39.49Zm-19.14,2.75h1.91c2.35,0,3.05-1.1,3.05-2.75s-.7-2.76-3.05-2.76h-1.91Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M298.05,52.86v7.31a19.64,19.64,0,0,1-6.61,1.15c-2.55,0-5.05-.65-6.36-2.4a11.77,11.77,0,0,1-7.56,2.4c-4.46,0-8.36-2.15-8.36-7.11,0-6.11,5.36-7.86,10.76-7.86a25.94,25.94,0,0,1,4.21.35v-.25c0-1.4-1.35-1.85-4.51-1.85a27,27,0,0,0-8.91,1.55V37.08a43.75,43.75,0,0,1,10.47-1.6c9.06,0,14.77,2.05,14.77,12.27v4.16c0,.7.35,1.05,1.1,1.05A6.16,6.16,0,0,0,298.05,52.86Zm-15.17,1.65a2.45,2.45,0,0,0,1.25-.35V51.71a8.18,8.18,0,0,0-1.1-.1c-.8,0-1.65.35-1.65,1.45A1.35,1.35,0,0,0,282.88,54.51Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M317.84,36.38V46.6h-3.91v2.15c0,1.8,1.4,1.9,2.45,1.9a7,7,0,0,0,1.61-.2v10a32.63,32.63,0,0,1-7.16.9c-4.66,0-10.07-1.6-10.07-10.36V46.6H298V36.38h2.8V30.32l13.17-3v9.06Z"
+        />
+        <path
+          class="logo-svg--text"
+          d="M340.07,35.48c6.61,0,8.72,4.11,8.72,8.71V60.42H335.61V47.3c0-.95-.6-1-.95-1a1.68,1.68,0,0,0-1.1.35V60.42H320.39V25.36h13.17V37.18A13,13,0,0,1,340.07,35.48Z"
+        />
+      </svg>
+    </section>
+
+    <section id="page-2">
+      <div class="logo">
+        <svg
+          id="logo-footer-svg"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 372.48 99.86"
+        >
+          <defs>
+            <linearGradient
+              id="e23e064d-0ff4-42b2-9ac1-db7c57f70542"
+              x1="55.14"
+              y1="31.82"
+              x2="33.42"
+              y2="74.27"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0" stop-color="#00d49c" />
+              <stop offset="1" stop-color="#ade900" />
+            </linearGradient>
+          </defs>
+          <title>BrightPath</title>
+          <path
+            class="logo-svg--icon"
+            d="M34.82,27.57v4.81A1.63,1.63,0,0,0,36.44,34l6.28,0a.2.2,0,0,1,.08.38L19.44,44.37A1.78,1.78,0,0,0,18.35,46v7.27a1.49,1.49,0,0,0,2.21,1.3l30.32-17a.29.29,0,0,1,.32.47L18.89,64.68a1.48,1.48,0,0,0-.54,1.14V76.51A1.49,1.49,0,0,0,19.84,78H30.53a1.48,1.48,0,0,0,1.14-.54L58.3,45.15a.28.28,0,0,1,.46.32l-17,30.31A1.49,1.49,0,0,0,43.07,78h7.38a1.61,1.61,0,0,0,1.49-1l10-23.44a.2.2,0,0,1,.39.08l0,6.25a1.63,1.63,0,0,0,1.63,1.63h4.86A1.49,1.49,0,0,0,70.26,60V27.57a1.48,1.48,0,0,0-1.48-1.48H36.31A1.49,1.49,0,0,0,34.82,27.57Z"
+            style="fill: url(#e23e064d-0ff4-42b2-9ac1-db7c57f70542);"
+          />
+          <path
+            class="logo-svg--text"
+            d="M109.6,34.13c0,3.25-.8,5.81-4.76,7.46C109.45,43,111,46.1,111,50.05c0,8-6.06,10.27-14.32,10.27H77.3V25.26H97C105.19,25.26,109.6,27.92,109.6,34.13ZM91.77,38.84h2.61A1.68,1.68,0,0,0,96.13,37a1.66,1.66,0,0,0-1.75-1.75H91.77Zm0,11.31h3.16a1.86,1.86,0,0,0,0-3.7H91.77Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M126.13,47.45v13H113v-24h11.41l.21,1.91c1.35-1.16,3.6-3.06,8.36-2.41V47.6A9.71,9.71,0,0,0,126.13,47.45Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M141.55,34.28c-3.9,0-6.81-2-6.81-6.06s2.91-6.11,6.81-6.11,6.81,2,6.81,6.11S145.46,34.28,141.55,34.28Zm-6.61,2.1v24h13.17v-24Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M167.94,38.89l.15-2.51h11.42V58.22c0,10.21-7.36,14.12-15.27,14.12-5.11,0-7.71-.4-11.62-1.8V60a19,19,0,0,0,8.71,1.75c2.81,0,5.06-.7,5.06-2.65v-.8A9.32,9.32,0,0,1,160.58,60c-7.26,0-10.36-5.16-10.36-12.27s3.1-12.27,10.36-12.27A10.43,10.43,0,0,1,167.94,38.89Zm-4.1,9.21c0,1.8.2,2.55,1.4,2.55a2.26,2.26,0,0,0,1.15-.3v-4.5a2.31,2.31,0,0,0-1.25-.3C163.89,45.55,163.84,46.75,163.84,48.1Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M202,35.48c6.61,0,8.71,4.11,8.71,8.71V60.42H197.54V47.3c0-.95-.6-1-.95-1a1.68,1.68,0,0,0-1.1.35V60.42H182.32V25.36h13.17V37.18A13,13,0,0,1,202,35.48Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M232.3,36.38V46.6h-3.91v2.15c0,1.8,1.4,1.9,2.46,1.9a7,7,0,0,0,1.6-.2v10a32.63,32.63,0,0,1-7.16.9c-4.66,0-10.07-1.6-10.07-10.36V46.6h-2.8V36.38h2.8V30.32l13.17-3v9.06Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M268.46,39.49c0,10.61-7.07,14.17-16.33,14.17h-2.81v6.76H235.25V25.36H252C261.39,25.36,268.46,28.87,268.46,39.49Zm-19.14,2.75h1.91c2.35,0,3.05-1.1,3.05-2.75s-.7-2.76-3.05-2.76h-1.91Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M298.05,52.86v7.31a19.64,19.64,0,0,1-6.61,1.15c-2.55,0-5.05-.65-6.36-2.4a11.77,11.77,0,0,1-7.56,2.4c-4.46,0-8.36-2.15-8.36-7.11,0-6.11,5.36-7.86,10.76-7.86a25.94,25.94,0,0,1,4.21.35v-.25c0-1.4-1.35-1.85-4.51-1.85a27,27,0,0,0-8.91,1.55V37.08a43.75,43.75,0,0,1,10.47-1.6c9.06,0,14.77,2.05,14.77,12.27v4.16c0,.7.35,1.05,1.1,1.05A6.16,6.16,0,0,0,298.05,52.86Zm-15.17,1.65a2.45,2.45,0,0,0,1.25-.35V51.71a8.18,8.18,0,0,0-1.1-.1c-.8,0-1.65.35-1.65,1.45A1.35,1.35,0,0,0,282.88,54.51Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M317.84,36.38V46.6h-3.91v2.15c0,1.8,1.4,1.9,2.45,1.9a7,7,0,0,0,1.61-.2v10a32.63,32.63,0,0,1-7.16.9c-4.66,0-10.07-1.6-10.07-10.36V46.6H298V36.38h2.8V30.32l13.17-3v9.06Z"
+          />
+          <path
+            class="logo-svg--text"
+            d="M340.07,35.48c6.61,0,8.72,4.11,8.72,8.71V60.42H335.61V47.3c0-.95-.6-1-.95-1a1.68,1.68,0,0,0-1.1.35V60.42H320.39V25.36h13.17V37.18A13,13,0,0,1,340.07,35.48Z"
+          />
+        </svg>
+      </div>
+
+      <div class="contact">
+        <div class="dribble">
+          <a href="https://dribbble.com/BrightPath" target="_blank">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 14.96 14.96"
+            >
+              <path
+                d="M7.48,0A7.48,7.48,0,1,0,15,7.48,7.48,7.48,0,0,0,7.48,0Zm4.94,3.45a6.36,6.36,0,0,1,1.44,4,15,15,0,0,0-4.44-.2l-.14-.33C9.15,6.58,9,6.26,8.86,6A8.61,8.61,0,0,0,12.42,3.45ZM7.48,1.1a6.36,6.36,0,0,1,4.23,1.61A7.24,7.24,0,0,1,8.36,5,34.5,34.5,0,0,0,6,1.27,6.69,6.69,0,0,1,7.48,1.1Zm-2.72.6A40.33,40.33,0,0,1,7.13,5.39a23.74,23.74,0,0,1-5.91.78A6.46,6.46,0,0,1,4.76,1.7ZM1.09,7.49v-.2a23.19,23.19,0,0,0,6.56-.91c.18.36.35.72.52,1.09l-.25.07a10.14,10.14,0,0,0-5.19,4.21A6.35,6.35,0,0,1,1.09,7.49Zm6.39,6.38a6.31,6.31,0,0,1-3.92-1.35,8.78,8.78,0,0,1,5-4h0A26.75,26.75,0,0,1,10,13.36,6.35,6.35,0,0,1,7.48,13.87ZM11,12.77A28.75,28.75,0,0,0,9.8,8.22a9.45,9.45,0,0,1,4,.28A6.3,6.3,0,0,1,11,12.77Z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="instagram">
+          <a href="https://www.instagram.com/brightpath.media/" target="_blank">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 14.96 14.96"
+            >
+              <path
+                d="M7.48,1.35c2,0,2.23,0,3,0a4.14,4.14,0,0,1,1.39.26,2.25,2.25,0,0,1,.86.56,2.37,2.37,0,0,1,.56.86,4.15,4.15,0,0,1,.25,1.39c0,.78,0,1,0,3s0,2.23,0,3a4.21,4.21,0,0,1-.25,1.39,2.48,2.48,0,0,1-1.42,1.42,4.21,4.21,0,0,1-1.39.25c-.79,0-1,0-3,0s-2.24,0-3,0a4.15,4.15,0,0,1-1.39-.25,2.37,2.37,0,0,1-.86-.56,2.25,2.25,0,0,1-.56-.86,4.14,4.14,0,0,1-.26-1.39c0-.79,0-1,0-3s0-2.24,0-3a4.08,4.08,0,0,1,.26-1.39,2.25,2.25,0,0,1,.56-.86,2.25,2.25,0,0,1,.86-.56,4.08,4.08,0,0,1,1.39-.26c.78,0,1,0,3,0M7.48,0c-2,0-2.29,0-3.09,0A5.73,5.73,0,0,0,2.58.39a3.57,3.57,0,0,0-1.32.87A3.57,3.57,0,0,0,.39,2.58,5.73,5.73,0,0,0,0,4.39c0,.8,0,1.06,0,3.09s0,2.28,0,3.08a5.74,5.74,0,0,0,.35,1.82,3.65,3.65,0,0,0,.87,1.32,3.54,3.54,0,0,0,1.32.86,5.47,5.47,0,0,0,1.81.35c.8,0,1.06.05,3.09.05s2.28,0,3.08-.05a5.48,5.48,0,0,0,1.82-.35,3.82,3.82,0,0,0,2.18-2.18,5.48,5.48,0,0,0,.35-1.82c0-.8.05-1.05.05-3.08s0-2.29-.05-3.09a5.47,5.47,0,0,0-.35-1.81,3.54,3.54,0,0,0-.86-1.32A3.65,3.65,0,0,0,12.38.39,5.74,5.74,0,0,0,10.56,0c-.8,0-1.05,0-3.08,0Z"
+              />
+              <path
+                d="M7.48,3.64a3.84,3.84,0,1,0,3.84,3.84A3.84,3.84,0,0,0,7.48,3.64Zm0,6.33A2.49,2.49,0,1,1,10,7.48,2.49,2.49,0,0,1,7.48,10Z"
+              />
+              <circle cx="11.47" cy="3.49" r="0.9" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="email">
+          <a href="mailto:hi@brightpath.media">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 13.84 10.02"
+            >
+              <path
+                d="M0,0V10H13.84V0ZM11.88,1.15l-5,5-5-5ZM1.15,8.87V2L6.92,7.73,12.69,2V8.87Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="clickoutBg"></div>
+      <div class="page-2-bg"></div>
+    </section>
+  </body>
+</html>
