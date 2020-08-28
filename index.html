@@ -78,6 +78,7 @@
         right: 0;
         left: 0;
         height: 30vh;
+        max-height: 200px;
         max-height: 400px;
         /* background: white; */
         display: flex;
@@ -94,6 +95,7 @@
         right: 0;
         left: 0;
         height: 30vh;
+        min-height: 200px;
         max-height: 400px;
         background: white;
         display: inline-block;
@@ -168,10 +170,10 @@
         localStorage.setItem("infoDisplayed", false);
       }
 
-      window.onload = function() {
+      window.onload = function () {
         document
           .querySelector(".clickoutBg")
-          .addEventListener("click", function(e) {
+          .addEventListener("click", function (e) {
             if (localStorage.getItem("infoDisplayed")) {
               console.log("alsdjf");
               hideInfo();
@@ -180,13 +182,13 @@
 
         document
           .querySelector("#logo-main-svg")
-          .addEventListener("click", function(e) {
+          .addEventListener("click", function (e) {
             console.log("hasiofw");
             showInfo();
           });
       };
 
-      window.onwheel = function(e) {
+      window.onwheel = function (e) {
         let dY = e.deltaY;
         if (localStorage.getItem("infoDisplayed") != "true" && dY > 0) {
           console.log(e);
@@ -280,7 +282,7 @@
         <path
           class="logo-svg--icon"
           d="M34.82,27.57v4.81A1.63,1.63,0,0,0,36.44,34l6.28,0a.2.2,0,0,1,.08.38L19.44,44.37A1.78,1.78,0,0,0,18.35,46v7.27a1.49,1.49,0,0,0,2.21,1.3l30.32-17a.29.29,0,0,1,.32.47L18.89,64.68a1.48,1.48,0,0,0-.54,1.14V76.51A1.49,1.49,0,0,0,19.84,78H30.53a1.48,1.48,0,0,0,1.14-.54L58.3,45.15a.28.28,0,0,1,.46.32l-17,30.31A1.49,1.49,0,0,0,43.07,78h7.38a1.61,1.61,0,0,0,1.49-1l10-23.44a.2.2,0,0,1,.39.08l0,6.25a1.63,1.63,0,0,0,1.63,1.63h4.86A1.49,1.49,0,0,0,70.26,60V27.57a1.48,1.48,0,0,0-1.48-1.48H36.31A1.49,1.49,0,0,0,34.82,27.57Z"
-          style="fill: url(#e23e064d-0ff4-42b2-9ac1-db7c57f70542);"
+          style="fill: url(#e23e064d-0ff4-42b2-9ac1-db7c57f70542)"
         />
         <path
           class="logo-svg--text"
@@ -351,7 +353,7 @@
           <path
             class="logo-svg--icon"
             d="M34.82,27.57v4.81A1.63,1.63,0,0,0,36.44,34l6.28,0a.2.2,0,0,1,.08.38L19.44,44.37A1.78,1.78,0,0,0,18.35,46v7.27a1.49,1.49,0,0,0,2.21,1.3l30.32-17a.29.29,0,0,1,.32.47L18.89,64.68a1.48,1.48,0,0,0-.54,1.14V76.51A1.49,1.49,0,0,0,19.84,78H30.53a1.48,1.48,0,0,0,1.14-.54L58.3,45.15a.28.28,0,0,1,.46.32l-17,30.31A1.49,1.49,0,0,0,43.07,78h7.38a1.61,1.61,0,0,0,1.49-1l10-23.44a.2.2,0,0,1,.39.08l0,6.25a1.63,1.63,0,0,0,1.63,1.63h4.86A1.49,1.49,0,0,0,70.26,60V27.57a1.48,1.48,0,0,0-1.48-1.48H36.31A1.49,1.49,0,0,0,34.82,27.57Z"
-            style="fill: url(#e23e064d-0ff4-42b2-9ac1-db7c57f70542);"
+            style="fill: url(#e23e064d-0ff4-42b2-9ac1-db7c57f70542)"
           />
           <path
             class="logo-svg--text"
